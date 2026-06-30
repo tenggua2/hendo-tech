@@ -1,934 +1,1029 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HENDO A2 Metal Composite Panel</title>
+<title>Hengdu Technology | A2 Non-Combustible Aluminum Composite Panel</title>
+<meta name="description" content="World's first zero-absorption extruded A2-s1,d0 aluminum composite panel. Daily capacity 5,000 sqm. EN 13501-1 certified.">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --gold:#c9a961;
-  --gold-light:#e8d5a3;
-  --black:#0a0a0a;
-  --charcoal:#1a1a1a;
-  --gray:#2a2a2a;
-  --gray-light:#666;
-  --white:#fff;
-  --off-white:#f8f7f5;
-}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Helvetica Neue','PingFang SC','Microsoft YaHei',sans-serif;
-  background:#e5e5e5;
-  color:var(--charcoal);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-.lang-zh [data-en],.lang-en [data-zh]{display:none}
-
-/* TOP BAR */
-.topbar{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(0,0,0,0.08);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 40px;height:60px;
-}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-logo{
-  font-size:22px;font-weight:700;letter-spacing:4px;
-  color:var(--charcoal);
-}
-.brand-tag{
-  font-size:10px;color:var(--gray-light);letter-spacing:2px;
-  border-left:1px solid #ddd;padding-left:12px;
-}
-.topbar-actions{display:flex;align-items:center;gap:20px}
-.lang-switch{display:flex;gap:8px}
-.lang-switch button{
-  border:none;background:transparent;color:var(--gray-light);
-  font-size:12px;font-weight:500;cursor:pointer;padding:6px 12px;
-  border-radius:4px;transition:all .3s;
-}
-.lang-switch button.active{background:var(--charcoal);color:var(--white)}
-.btn-print{
-  background:var(--gold);color:var(--white);border:none;
-  padding:10px 24px;font-size:11px;font-weight:600;
-  letter-spacing:2px;cursor:pointer;transition:all .3s;
-}
-.btn-print:hover{background:var(--charcoal)}
-
-/* BROCHURE CONTAINER */
-.brochure{
-  padding-top:60px;
-  display:flex;flex-direction:column;
-  align-items:center;gap:0;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #e0e0e0;
+  background: #0d0d0f;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-/* PAGE - A4 SIZE */
-.page{
-  width:794px;height:1123px;
-  background:var(--white);
-  position:relative;overflow:hidden;
-  box-shadow:0 4px 40px rgba(0,0,0,0.15);
-  page-break-after:always;
+/* === Utility === */
+img { max-width: 100%; height: auto; display: block; }
+.accent { color: #c8a45c; }
+.mono { font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace; }
+
+/* === Language Layers === */
+.lang-hidden { display: none !important; }
+
+/* === Background === */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,164,92,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 80% at 80% 100%, rgba(200,164,92,0.03) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
 }
 
-/* ===== P1: COVER ===== */
-.p1-cover{background:var(--charcoal)}
-.p1-cover .cover-image{
-  position:absolute;inset:0;
-  background:url('images/hero-building.jpg') center/cover;
-  opacity:0.7;
+/* === Nav === */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background: rgba(13,13,15,0.88); backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.p1-cover .cover-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,0.9) 100%);
+.nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 32px;
 }
-.p1-cover .cover-content{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:80px 70px;
-  color:var(--white);
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
 }
-.cover-logo{
-  font-size:14px;letter-spacing:6px;
-  color:var(--gold);margin-bottom:30px;
+.nav-logo .logo-img { height: 40px; width: auto; }
+.nav-logo .name { font-weight: 700; font-size: 18px; color: #fff; letter-spacing: 0.5px; }
+.nav-logo .name span { display: block; font-size: 11px; color: #888; font-weight: 400; letter-spacing: 0; }
+
+.nav-links { display: flex; gap: 6px; align-items: center; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: #999; font-size: 13px; font-weight: 500;
+  padding: 8px 14px; border-radius: 6px; transition: all 0.2s;
 }
-.cover-title{
-  font-size:52px;font-weight:300;line-height:1.15;
-  letter-spacing:2px;margin-bottom:20px;
+.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+
+.lang-toggle {
+  display: flex; gap: 0; margin-left: 16px;
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; overflow: hidden;
 }
-.cover-title span{font-weight:600}
-.cover-subtitle{
-  font-size:16px;color:rgba(255,255,255,0.7);
-  letter-spacing:3px;margin-bottom:50px;
+.lang-toggle button {
+  border: none; background: transparent; color: #888;
+  padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all 0.2s;
 }
-.cover-badge{
-  display:inline-flex;align-items:center;gap:20px;
-  padding:20px 30px;
-  border:1px solid rgba(201,169,97,0.5);
+.lang-toggle button.active { background: #c8a45c; color: #0d0d0f; }
+.lang-toggle button:hover:not(.active) { color: #fff; }
+
+/* === Sections === */
+section { position: relative; z-index: 1; padding: 100px 32px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  text-transform: uppercase; font-size: 11px; letter-spacing: 3px;
+  color: #c8a45c; margin-bottom: 16px; font-weight: 600;
+  text-align: center;
 }
-.cover-badge .num-wrap{display:flex;flex-direction:column;align-items:center}
-.cover-badge .num{
-  font-size:56px;font-weight:700;color:var(--gold);
-  line-height:1;
+.section-title {
+  font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 16px;
+  color: #fff; letter-spacing: -0.5px;
 }
-.cover-badge .annotation{
-  font-size:11px;color:rgba(201,169,97,0.8);letter-spacing:2px;
-  margin-top:4px;
-}
-.cover-badge .text{
-  font-size:13px;color:rgba(255,255,255,0.8);
-  line-height:1.5;
+.section-sub {
+  text-align: center; color: #888; font-size: 16px; margin-bottom: 60px;
+  max-width: 640px; margin-left: auto; margin-right: auto;
 }
 
-/* ===== P2: WHY HENDO ===== */
-.p2-why{padding:70px 60px;background:var(--off-white)}
-.p2-why .section-header{
-  text-align:center;margin-bottom:60px;
+/* === Hero === */
+.hero {
+  padding-top: 160px; padding-bottom: 100px;
+  text-align: center;
+  background: radial-gradient(ellipse 90% 100% at 50% 0%, rgba(200,164,92,0.08) 0%, transparent 60%);
 }
-.p2-why .section-num{
-  font-size:12px;letter-spacing:4px;color:var(--gold);
-  margin-bottom:15px;
+.hero-badge {
+  display: inline-block; border: 1px solid rgba(200,164,92,0.4);
+  color: #c8a45c; padding: 6px 20px; border-radius: 100px;
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 28px;
 }
-.p2-why .section-title{
-  font-size:36px;font-weight:300;letter-spacing:2px;
-}
-.p2-why .section-title span{font-weight:600}
-
-.why-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-.why-card{
-  background:var(--white);padding:50px 40px;
-  position:relative;
-}
-.why-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:var(--gold);
-}
-.why-card.highlight{background:var(--charcoal);color:var(--white)}
-.why-card.highlight::before{background:var(--gold)}
-.why-card .icon{
-  font-size:42px;color:var(--gold);margin-bottom:25px;
-  font-weight:300;
-}
-.why-card .num{
-  font-size:64px;font-weight:700;line-height:1;
-  margin-bottom:8px;
-}
-.why-card .num.gold{color:var(--gold)}
-.why-card .num-annot{
-  font-size:12px;color:var(--gold);letter-spacing:2px;
-  margin-bottom:20px;opacity:0.8;
-}
-.why-card.highlight .num-annot{color:rgba(201,169,97,0.8)}
-.why-card .label{
-  font-size:18px;font-weight:500;margin-bottom:15px;
-  letter-spacing:1px;
-}
-.why-card .desc{
-  font-size:13px;color:var(--gray-light);line-height:1.8;
-}
-.why-card.highlight .desc{color:rgba(255,255,255,0.6)}
-
-/* ===== P3: ZERO ABSORPTION ===== */
-.p3-zero{display:flex}
-.p3-zero .left{
-  flex:1;background:var(--charcoal);color:var(--white);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:60px;
-}
-.p3-zero .right{
-  width:45%;
-  background:url('images/panel-color.jpg') center/cover;
-}
-.zero-badge{
-  width:180px;height:180px;border-radius:50%;
-  border:4px solid var(--gold);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  margin-bottom:50px;
-}
-.zero-badge .num{font-size:72px;font-weight:700;color:var(--gold);line-height:1}
-.zero-badge .unit{font-size:18px;color:var(--white);margin-top:5px}
-.zero-badge .zero-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:2px;margin-top:3px}
-.zero-title{
-  font-size:32px;font-weight:300;letter-spacing:2px;
-  margin-bottom:25px;
-}
-.zero-title span{font-weight:600}
-.zero-desc{
-  font-size:15px;color:rgba(255,255,255,0.7);
-  line-height:2;margin-bottom:40px;
-}
-.zero-features{
-  display:flex;flex-direction:column;gap:20px;
-}
-.zero-feature{
-  display:flex;align-items:center;gap:20px;
-}
-.zero-feature .dot{
-  width:8px;height:8px;background:var(--gold);border-radius:50%;
-}
-.zero-feature .text{font-size:14px;letter-spacing:1px}
-
-/* ===== P4: COMPARISON ===== */
-.p4-compare{padding:70px 60px}
-.p4-compare .section-header{
-  text-align:center;margin-bottom:50px;
-}
-.p4-compare .section-title{
-  font-size:32px;font-weight:300;letter-spacing:2px;
-}
-.p4-compare .section-title span{font-weight:600}
-.p4-compare .section-sub{
-  font-size:14px;color:var(--gray-light);margin-top:15px;
+.hero h1 { font-size: 56px; font-weight: 900; line-height: 1.15; margin-bottom: 20px; color: #fff; }
+.hero h1 em { font-style: normal; color: #c8a45c; }
+.hero p.desc { font-size: 18px; color: #999; max-width: 640px; margin: 0 auto 44px; line-height: 1.7; }
+.hero-img {
+  max-width: 900px; margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 60px rgba(200,164,92,0.08);
 }
 
-.compare-table{
-  width:100%;border-collapse:collapse;
+.hero-stats {
+  display: flex; justify-content: center; gap: 60px; margin-top: 48px; flex-wrap: wrap;
 }
-.compare-table th{
-  padding:25px 20px;text-align:left;
-  font-size:13px;font-weight:600;letter-spacing:2px;
-  text-transform:uppercase;
-  border-bottom:2px solid var(--charcoal);
-}
-.compare-table th.center{text-align:center}
-.compare-table th.gold{color:var(--gold)}
-.compare-table td{
-  padding:22px 20px;font-size:14px;
-  border-bottom:1px solid #eee;
-}
-.compare-table tr:nth-child(even){background:var(--off-white)}
-.compare-table td.center{text-align:center;font-weight:600}
-.compare-table td.hendo{color:var(--gold);font-weight:700}
-.compare-table td.bad{color:#c0392b}
-.compare-table td.good{color:var(--gold)}
-.compare-table .unit{display:block;font-size:10px;font-weight:400;color:var(--gray-light);margin-top:2px;letter-spacing:1px}
-.compare-table td.hendo .unit{color:rgba(201,169,97,0.6)}
+.hero-stat { text-align: center; }
+.hero-stat .num { font-size: 42px; font-weight: 900; color: #c8a45c; }
+.hero-stat .unit { font-size: 22px; font-weight: 600; color: #c8a45c; }
+.hero-stat .label { font-size: 13px; color: #666; margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
 
-/* ===== P5: SPECIFICATIONS ===== */
-.p5-spec{display:flex}
-.p5-spec .left{
-  width:50%;padding:70px 50px;
-  display:flex;flex-direction:column;justify-content:center;
+/* === Products === */
+.prod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.prod-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
 }
-.p5-spec .right{
-  width:50%;
-  background:url('images/panel-detail.png') center/cover;
+.prod-card:hover { border-color: rgba(200,164,92,0.3); transform: translateY(-4px); }
+.prod-card.featured { border-color: rgba(200,164,92,0.4); position: relative; }
+.prod-card.featured::before {
+  content: attr(data-star);
+  position: absolute; top: 16px; right: 16px; z-index: 1;
+  background: #c8a45c; color: #0d0d0f; padding: 4px 12px; border-radius: 6px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
 }
-.spec-title{
-  font-size:28px;font-weight:300;letter-spacing:2px;
-  margin-bottom:50px;
-}
-.spec-title span{font-weight:600}
-.spec-list{
-  display:flex;flex-direction:column;gap:35px;
-}
-.spec-item{display:flex;align-items:baseline;gap:30px}
-.spec-item .label{
-  width:120px;font-size:13px;color:var(--gray-light);
-  letter-spacing:2px;text-transform:uppercase;
-}
-.spec-item .value{
-  flex:1;font-size:18px;font-weight:500;
-}
-.spec-item .value.highlight{
-  color:var(--gold);font-size:24px;font-weight:700;
-}
-.spec-item .value .unit-note{
-  display:block;font-size:11px;font-weight:400;color:var(--gray-light);
-  margin-top:3px;letter-spacing:1px;
-}
-.spec-item .value.highlight .unit-note{color:rgba(201,169,97,0.6)}
-
-/* ===== P6: CERTIFICATIONS ===== */
-.p6-cert{padding:70px 60px;background:var(--charcoal);color:var(--white)}
-.p6-cert .section-header{
-  text-align:center;margin-bottom:60px;
-}
-.p6-cert .section-title{
-  font-size:32px;font-weight:300;letter-spacing:2px;
-}
-.p6-cert .section-title span{font-weight:600}
-.cert-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:25px;
-}
-.cert-card{
-  background:rgba(255,255,255,0.05);padding:40px 30px;
-  text-align:center;border:1px solid rgba(255,255,255,0.1);
-  transition:all .3s;
-}
-.cert-card:hover{background:rgba(255,255,255,0.1)}
-.cert-card .flag{
-  font-size:36px;margin-bottom:20px;
-}
-.cert-card .region{
-  font-size:12px;letter-spacing:3px;color:var(--gold);
-  margin-bottom:10px;
-}
-.cert-card .name{
-  font-size:16px;font-weight:500;margin-bottom:15px;
-}
-.cert-card .std{
-  font-size:13px;color:rgba(255,255,255,0.5);
+.prod-card img { width: 100%; height: 240px; object-fit: cover; }
+.prod-body { padding: 24px; }
+.prod-body h3 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.prod-body p { font-size: 14px; color: #888; line-height: 1.6; margin-bottom: 16px; }
+.prod-specs { display: flex; flex-wrap: wrap; gap: 8px; }
+.prod-specs span {
+  background: rgba(200,164,92,0.08); color: #c8a45c;
+  padding: 4px 10px; border-radius: 4px; font-size: 12px;
 }
 
-/* ===== P7: COLORS ===== */
-.p7-colors{padding:70px 60px}
-.p7-colors .section-header{
-  text-align:center;margin-bottom:50px;
+/* === Tech Section === */
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.tech-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px; padding: 28px; transition: border-color 0.3s;
 }
-.p7-colors .section-title{
-  font-size:32px;font-weight:300;letter-spacing:2px;
+.tech-card:hover { border-color: rgba(200,164,92,0.2); }
+.tech-card .icon { font-size: 28px; margin-bottom: 16px; }
+.tech-card h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.tech-card p { font-size: 13px; color: #888; line-height: 1.6; }
+
+.compare-table {
+  width: 100%; border-collapse: collapse; margin-top: 48px;
+  font-size: 13px; border-radius: 10px; overflow: hidden;
 }
-.color-section{margin-bottom:50px}
-.color-section:last-child{margin-bottom:0}
-.color-header{
-  display:flex;align-items:center;gap:20px;margin-bottom:25px;
+.compare-table th {
+  background: rgba(200,164,92,0.1); color: #c8a45c;
+  padding: 14px 16px; text-align: left; font-weight: 700;
 }
-.color-header .line{
-  flex:1;height:1px;background:#ddd;
+.compare-table td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #ccc; }
+.compare-table tr.win td.first { color: #c8a45c; font-weight: 600; }
+.compare-table tr.win td:last-child { color: #c8a45c; font-weight: 600; }
+
+/* === Specs === */
+.spec-group { margin-bottom: 40px; }
+.spec-group h4 { font-size: 18px; font-weight: 700; color: #c8a45c; margin-bottom: 16px; }
+.spec-table {
+  width: 100%; border-collapse: collapse; font-size: 13px;
+  border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; overflow: hidden;
 }
-.color-header .title{
-  font-size:14px;letter-spacing:3px;color:var(--gray-light);
+.spec-table th {
+  background: rgba(255,255,255,0.04); color: #aaa;
+  padding: 10px 14px; text-align: left; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
 }
-.color-row{
-  display:flex;gap:15px;flex-wrap:wrap;
+.spec-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #ddd; }
+
+/* === Certs === */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
+.cert-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px; padding: 24px 16px; text-align: center;
+  transition: border-color 0.3s;
 }
-.color-swatch{
-  width:90px;height:70px;border-radius:4px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  position:relative;
-}
-.color-swatch .name{
-  position:absolute;bottom:-25px;left:0;right:0;
-  font-size:11px;color:var(--gray-light);text-align:center;
+.cert-card:hover { border-color: rgba(200,164,92,0.2); }
+.cert-card .flag { font-size: 32px; margin-bottom: 10px; }
+.cert-card .standard { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.cert-card .grade { font-size: 12px; color: #ccc; }
+.cert-card .tag {
+  display: inline-block; margin-top: 10px;
+  padding: 3px 10px; border-radius: 4px;
+  background: rgba(200,164,92,0.12); color: #c8a45c;
+  font-size: 10px; letter-spacing: 1px; font-weight: 700;
 }
 
-/* ===== P8: APPLICATIONS ===== */
-.p8-apps{padding:70px 60px;background:var(--off-white)}
-.p8-apps .section-header{
-  text-align:center;margin-bottom:60px;
+/* === Cases === */
+.case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 28px; }
+.case-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px; overflow: hidden; transition: border-color 0.3s;
 }
-.p8-apps .section-title{
-  font-size:32px;font-weight:300;letter-spacing:2px;
+.case-card:hover { border-color: rgba(200,164,92,0.2); }
+.case-card img { width: 100%; height: 280px; object-fit: cover; }
+.case-body { padding: 20px 24px 24px; }
+.case-body h4 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.case-body .loc { font-size: 13px; color: #c8a45c; margin-bottom: 8px; }
+.case-body p { font-size: 13px; color: #888; }
+
+/* === About === */
+.about-text { font-size: 15px; color: #bbb; max-width: 760px; margin: 0 auto; text-align: center; line-height: 1.8; }
+.about-stats {
+  display: flex; justify-content: center; gap: 56px; margin-top: 40px; flex-wrap: wrap;
 }
-.app-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:25px;
-}
-.app-card{
-  position:relative;height:280px;overflow:hidden;
-}
-.app-card img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .5s;
-}
-.app-card:hover img{transform:scale(1.05)}
-.app-card .overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.8) 100%);
-}
-.app-card .content{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:30px;color:var(--white);
-}
-.app-card .num{
-  font-size:48px;font-weight:700;color:var(--gold);
-  opacity:0.3;line-height:1;margin-bottom:-10px;
-}
-.app-card .title{
-  font-size:18px;font-weight:500;letter-spacing:1px;
-  margin-bottom:8px;
-}
-.app-card .desc{
-  font-size:12px;color:rgba(255,255,255,0.7);
+.about-stats .item { text-align: center; }
+.about-stats .item .n { font-size: 36px; font-weight: 900; color: #c8a45c; }
+.about-stats .item .l { font-size: 12px; color: #666; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+.about-img {
+  max-width: 700px; margin: 48px auto 0;
+  border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);
 }
 
-/* ===== P9: PROJECTS ===== */
-.p9-projects{padding:70px 60px}
-.p9-projects .section-header{
-  text-align:center;margin-bottom:50px;
+/* === Contact === */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.contact-info h4 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.contact-info .sub { font-size: 14px; color: #888; margin-bottom: 24px; }
+.contact-info .row { display: flex; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #ccc; }
+.contact-info .row .key { color: #c8a45c; font-weight: 600; min-width: 60px; }
+
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.contact-form input, .contact-form textarea, .contact-form select {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 14px;
+  font-family: inherit; transition: border-color 0.2s;
 }
-.p9-projects .section-title{
-  font-size:32px;font-weight:300;letter-spacing:2px;
+.contact-form select option {
+  color: #e0e0e0; background: #1a1a1f;
 }
-.project-showcase{
-  display:flex;gap:40px;
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+  outline: none; border-color: #c8a45c;
 }
-.project-card{flex:1}
-.project-card .image{
-  height:320px;overflow:hidden;margin-bottom:25px;
+.contact-form textarea { min-height: 120px; resize: vertical; }
+.contact-form button {
+  background: linear-gradient(135deg, #c8a45c, #a88840); color: #0d0d0f;
+  border: none; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 700;
+  cursor: pointer; transition: opacity 0.2s;
 }
-.project-card .image img{
-  width:100%;height:100%;object-fit:cover;
-}
-.project-card .location{
-  font-size:12px;letter-spacing:3px;color:var(--gold);
-  margin-bottom:10px;
-}
-.project-card .name{
-  font-size:22px;font-weight:500;margin-bottom:15px;
-}
-.project-card .desc{
-  font-size:14px;color:var(--gray-light);line-height:1.8;
+.contact-form button:hover { opacity: 0.9; }
+
+/* === Footer === */
+footer {
+  text-align: center; padding: 40px 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 12px; color: #555;
 }
 
-/* ===== P10: CONTACT ===== */
-.p10-contact{display:flex}
-.p10-contact .left{
-  flex:1;background:var(--charcoal);color:var(--white);
-  padding:70px 60px;display:flex;flex-direction:column;
-  justify-content:center;
-}
-.p10-contact .right{
-  width:45%;
-  background:url('images/factory.jpg') center/cover;
-}
-.contact-logo{
-  font-size:32px;font-weight:700;letter-spacing:8px;
-  color:var(--gold);margin-bottom:20px;
-}
-.contact-tagline{
-  font-size:14px;letter-spacing:4px;color:rgba(255,255,255,0.6);
-  margin-bottom:60px;
-}
-.contact-info{display:flex;flex-direction:column;gap:35px}
-.contact-item{display:flex;gap:25px;align-items:flex-start}
-.contact-item .icon{
-  width:50px;height:50px;border:1px solid rgba(201,169,97,0.4);
-  display:flex;align-items:center;justify-content:center;
-  font-size:20px;color:var(--gold);flex-shrink:0;
-}
-.contact-item .content{flex:1}
-.contact-item .label{
-  font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.5);
-  margin-bottom:8px;
-}
-.contact-item .value{
-  font-size:16px;font-weight:500;
-}
-
-/* PAGE NUMBER */
-.page-num{
-  position:absolute;bottom:40px;right:50px;
-  font-size:11px;letter-spacing:2px;color:var(--gray-light);
-}
-.page-dark .page-num{color:rgba(255,255,255,0.4)}
-
-/* PRINT STYLES */
-@media print{
-  .topbar{display:none}
-  .brochure{padding-top:0}
-  .page{
-    box-shadow:none;page-break-after:always;
-    width:210mm;height:297mm;
-  }
-  body{background:var(--white)}
-}
-
-/* MOBILE */
-@media(max-width:850px){
-  .page{width:100%;height:auto;min-height:100vh}
-  .p3-zero,.p5-spec,.p10-contact{flex-direction:column}
-  .p3-zero .right,.p5-spec .right,.p10-contact .right{height:300px;width:100%}
-  .why-grid,.cert-grid,.app-grid{grid-template-columns:1fr}
-  .project-showcase{flex-direction:column}
+/* === Mobile === */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-inner { padding: 12px 16px; }
+  .hero { padding-top: 120px; padding-bottom: 60px; }
+  .hero h1 { font-size: 32px; }
+  .hero p.desc { font-size: 15px; }
+  .hero-stats { gap: 32px; }
+  .hero-stat .num { font-size: 28px; }
+  section { padding: 60px 16px; }
+  .section-title { font-size: 28px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .case-grid { grid-template-columns: 1fr; }
+  .compare-table { font-size: 11px; }
+  .compare-table th, .compare-table td { padding: 8px 10px; }
 }
 </style>
 </head>
-<body class="lang-zh">
+<body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="brand">
-    <span class="brand-logo">HENDO</span>
-    <span class="brand-tag" data-zh="恒度科技" data-en="HENGDU TECH">恒度科技</span>
-  </div>
-  <div class="topbar-actions">
-    <span class="page-indicator">01 / 10</span>
-    <div class="lang-switch">
-      <button class="active" onclick="setLang('zh')">中文</button>
-      <button onclick="setLang('en')">EN</button>
+<!-- ======== NAV ======== -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img class="logo-img" src="images/logo.png" alt="恒度科技">
+    </a>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <ul class="nav-links">
+        <li><a href="#products" data-zh="产品" data-en="Products">产品</a></li>
+        <li><a href="#tech" data-zh="技术" data-en="Technology">技术</a></li>
+        <li><a href="#specs" data-zh="参数" data-en="Specs">参数</a></li>
+        <li><a href="#certs" data-zh="认证" data-en="Certs">认证</a></li>
+        <li><a href="#cases" data-zh="案例" data-en="Cases">案例</a></li>
+        <li><a href="#about" data-zh="关于" data-en="About">关于</a></li>
+        <li><a href="#contact" data-zh="联系" data-en="Contact">联系</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button id="btnZh" class="active" onclick="setLang('zh')">中文</button>
+        <button id="btnEn" onclick="setLang('en')">EN</button>
+      </div>
     </div>
-    <button class="btn-print" onclick="window.print()">PRINT / PDF</button>
   </div>
-</div>
+</nav>
 
-<!-- BROCHURE -->
-<div class="brochure">
+<!-- ======== ZH LAYER ======== -->
+<div id="zh-layer">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">全球首创 · 行业唯一</div>
+  <h1>零吸水<em>挤出型</em><br>A2 不燃金属复合板</h1>
+  <p class="desc">攻克无机-有机超分子耦联技术，全球第一条螺杆挤出A2级不燃芯材生产线。零吸水、高强度、可回收——真正意义上的下一代防火幕墙材料。</p>
+  <img class="hero-img" src="images/hero-building.jpg" alt="现代建筑幕墙">
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">5,000</div>
+      <div class="label">复合板日产量（㎡）</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">200<span class="unit"></span></div>
+      <div class="label">颗粒日产量（吨）</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">0<span class="unit">%</span></div>
+      <div class="label">芯材吸水率</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">5</div>
+      <div class="label">国际防火认证</div>
+    </div>
+  </div>
+</section>
 
-<!-- P1: COVER -->
-<div class="page p1-cover page-dark">
-  <div class="cover-image"></div>
-  <div class="cover-overlay"></div>
-  <div class="cover-content">
-    <div class="cover-logo">HENDO A2 PANEL</div>
-    <h1 class="cover-title">
-      <span data-zh="零吸水" data-en="ZERO ABSORPTION">零吸水</span><br>
-      <span data-zh="A2不燃金属复合板" data-en="A2 NON-COMBUSTIBLE">A2不燃金属复合板</span>
-    </h1>
-    <p class="cover-subtitle" data-zh="全球首创 · 螺杆挤出工艺 · 无机-有机超分子耦联技术" data-en="WORLD'S FIRST · EXTRUSION TECHNOLOGY · SUPERMOLECULAR COUPLING">全球首创 · 螺杆挤出工艺 · 无机-有机超分子耦联技术</p>
-    <div class="cover-badge">
-      <div class="num-wrap">
-        <div class="num">0%</div>
-        <div class="annotation" data-zh="吸水率" data-en="ABSORPTION">吸水率</div>
-      </div>
-      <div class="text" data-zh="24小时浸水测试<br>彻底解决芯材遇水失效" data-en="24H IMMERSION TEST<br>SOLVES WATER DAMAGE">24小时浸水测试<br>彻底解决芯材遇水失效</div>
-    </div>
-  </div>
-  <div class="page-num">01</div>
-</div>
-
-<!-- P2: WHY HENDO -->
-<div class="page p2-why">
-  <div class="section-header">
-    <div class="section-num">WHY HENDO</div>
-    <h2 class="section-title"><span data-zh="为什么选择" data-en="WHY">为什么选择</span> HENDO</h2>
-  </div>
-  <div class="why-grid">
-    <div class="why-card highlight">
-      <div class="icon">◆</div>
-      <div class="num gold">0%</div>
-      <div class="num-annot" data-zh="吸水率" data-en="WATER ABSORPTION">吸水率</div>
-      <div class="label" data-zh="零吸水率" data-en="Zero Absorption">零吸水率</div>
-      <div class="desc" data-zh="24小时浸水测试吸水率为0%，彻底解决传统A2芯材遇水膨胀、强度下降的行业难题" data-en="24-hour immersion test shows 0% absorption, solving the industry's water damage problem permanently">24小时浸水测试吸水率为0%，彻底解决传统A2芯材遇水膨胀、强度下降的行业难题</div>
-    </div>
-    <div class="why-card">
-      <div class="icon">◆</div>
-      <div class="num">A2</div>
-      <div class="num-annot" data-zh="防火等级" data-en="FIRE RATING">防火等级</div>
-      <div class="label" data-zh="最高防火等级" data-en="Top Fire Rating">最高防火等级</div>
-      <div class="desc" data-zh="通过中国GB 8624、欧盟EN 13501、英国BS、美国ASTM等6大国际权威认证" data-en="Certified to GB 8624, EN 13501, BS, ASTM and other 6 international standards">通过中国GB 8624、欧盟EN 13501、英国BS、美国ASTM等6大国际权威认证</div>
-    </div>
-    <div class="why-card">
-      <div class="icon">◆</div>
-      <div class="num">14<span style="font-size:28px;font-weight:400">+</span></div>
-      <div class="num-annot" data-zh="条产业线" data-en="PRODUCTION LINES">条产业线</div>
-      <div class="label" data-zh="条全产业链产线" data-en="Production Lines">条全产业链产线</div>
-      <div class="desc" data-zh="A2芯料颗粒8条+成品板6条，日产5000m²，原料到成品自主研发生产" data-en="8 granule lines + 6 panel lines, 5,000m² daily output, full vertical integration">A2芯料颗粒8条+成品板6条，日产5000m²，原料到成品自主研发生产</div>
-    </div>
-    <div class="why-card">
-      <div class="icon">◆</div>
-      <div class="num">3<span style="font-size:28px;font-weight:400"> m/min</span></div>
-      <div class="num-annot" data-zh="挤出生产速度" data-en="EXTRUSION SPEED">挤出生产速度</div>
-      <div class="label" data-zh="挤出速度" data-en="Extrusion Speed">挤出速度</div>
-      <div class="desc" data-zh="独创螺杆挤出工艺，速度远超传统热压法2m/min，产能提升50%" data-en="Proprietary extrusion process, 50% faster than traditional thermal pressing">独创螺杆挤出工艺，速度远超传统热压法2m/min，产能提升50%</div>
-    </div>
-  </div>
-  <div class="page-num">02</div>
-</div>
-
-<!-- P3: ZERO ABSORPTION -->
-<div class="page p3-zero page-dark">
-  <div class="left">
-    <div class="zero-badge">
-      <div class="num">0%</div>
-      <div class="unit" data-zh="吸水率" data-en="ABSORPTION">吸水率</div>
-      <div class="zero-sub" data-zh="24小时浸水测试" data-en="24H IMMERSION TEST">24小时浸水测试</div>
-    </div>
-    <h2 class="zero-title" data-zh="核心技术突破" data-en="CORE BREAKTHROUGH">核心技术突破</h2>
-    <p class="zero-desc" data-zh="传统A2芯材采用热压工艺，存在微孔结构，吸水率高达2-5%。我们的螺杆挤出工艺配合无机-有机超分子耦联技术，实现真正的零吸水，彻底解决建筑外立面渗漏导致的鼓包、脱落隐患。" data-en="Traditional A2 core has porous structure with 2-5% absorption. Our extrusion process with supermolecular coupling achieves true zero absorption, eliminating the risk of panel bulging and delamination caused by water infiltration.">传统A2芯材采用热压工艺，存在微孔结构，吸水率高达2-5%。我们的螺杆挤出工艺配合无机-有机超分子耦联技术，实现真正的零吸水，彻底解决建筑外立面渗漏导致的鼓包、脱落隐患。</p>
-    <div class="zero-features">
-      <div class="zero-feature">
-        <div class="dot"></div>
-        <div class="text" data-zh="无机-有机超分子耦联技术" data-en="Inorganic-Organic Supermolecular Coupling">无机-有机超分子耦联技术</div>
-      </div>
-      <div class="zero-feature">
-        <div class="dot"></div>
-        <div class="text" data-zh="连续螺杆挤出工艺" data-en="Continuous Screw Extrusion Process">连续螺杆挤出工艺</div>
-      </div>
-      <div class="zero-feature">
-        <div class="dot"></div>
-        <div class="text" data-zh="四川大学 / 中科院联合研发" data-en="Joint R&D with SCU & CAS">四川大学 / 中科院联合研发</div>
-      </div>
-    </div>
-  </div>
-  <div class="right"></div>
-  <div class="page-num">03</div>
-</div>
-
-<!-- P4: COMPARISON -->
-<div class="page p4-compare">
-  <div class="section-header">
-    <h2 class="section-title"><span data-zh="工艺对比" data-en="PROCESS">工艺对比</span></h2>
-    <p class="section-sub" data-zh="HENDO 挤出工艺 vs 传统热压工艺" data-en="HENDO Extrusion vs Traditional Thermal Pressing">HENDO 挤出工艺 vs 传统热压工艺</p>
-  </div>
-  <table class="compare-table">
-    <thead>
-      <tr>
-        <th data-zh="性能指标" data-en="PERFORMANCE">性能指标</th>
-        <th class="center gold" data-zh="HENDO A2" data-en="HENDO A2">HENDO A2</th>
-        <th class="center" data-zh="传统A2卷材" data-en="TRADITIONAL A2">传统A2卷材</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-zh="24小时吸水率" data-en="24h Water Absorption">24小时吸水率</td>
-        <td class="center hendo">0% <span class="unit" data-zh="吸水率" data-en="absorption">吸水率</span></td>
-        <td class="center bad">2-5% <span class="unit" data-zh="吸水率" data-en="absorption">吸水率</span></td>
-      </tr>
-      <tr>
-        <td data-zh="生产工艺" data-en="Production Process">生产工艺</td>
-        <td class="center hendo" data-zh="螺杆挤出" data-en="Screw Extrusion">螺杆挤出 <span class="unit" data-zh="连续生产" data-en="continuous">连续生产</span></td>
-        <td class="center" data-zh="热压复合" data-en="Thermal Pressing">热压复合 <span class="unit" data-zh="间歇式" data-en="batch">间歇式</span></td>
-      </tr>
-      <tr>
-        <td data-zh="生产速度" data-en="Production Speed">生产速度</td>
-        <td class="center hendo">>3 m/min <span class="unit" data-zh="挤出" data-en="extrusion">挤出</span></td>
-        <td class="center">~2 m/min <span class="unit" data-zh="热压" data-en="thermal press">热压</span></td>
-      </tr>
-      <tr>
-        <td data-zh="熟化时间" data-en="Curing Time">熟化时间</td>
-        <td class="center hendo" data-zh="无需熟化" data-en="None Required">无需熟化 <span class="unit">&check;</span></td>
-        <td class="center bad" data-zh="需要熟化" data-en="Required">需要熟化 <span class="unit">&cross;</span></td>
-      </tr>
-      <tr>
-        <td data-zh="废料回收" data-en="Waste Recycling">废料回收</td>
-        <td class="center hendo" data-zh="可回收" data-en="Recyclable">可回收 <span class="unit">&check;</span></td>
-        <td class="center bad" data-zh="不可回收" data-en="Not Recyclable">不可回收 <span class="unit">&cross;</span></td>
-      </tr>
-      <tr>
-        <td data-zh="遇水后强度" data-en="Strength After Water">遇水后强度</td>
-        <td class="center hendo" data-zh="保持不变" data-en="Unchanged">保持不变 <span class="unit">&check;</span></td>
-        <td class="center bad" data-zh="显著下降" data-en="Significant Drop">显著下降 <span class="unit">&cross;</span></td>
-      </tr>
-      <tr>
-        <td data-zh="长期耐候性" data-en="Long-term Weathering">长期耐候性</td>
-        <td class="center hendo" data-zh="优异" data-en="Excellent">优异 <span class="unit">&star;</span></td>
-        <td class="center" data-zh="一般" data-en="Moderate">一般</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="page-num">04</div>
-</div>
-
-<!-- P5: SPECIFICATIONS -->
-<div class="page p5-spec">
-  <div class="left">
-    <h2 class="spec-title"><span data-zh="产品规格" data-en="PRODUCT">产品规格</span></h2>
-    <div class="spec-list">
-      <div class="spec-item">
-        <span class="label" data-zh="防火等级" data-en="FIRE RATING">防火等级</span>
-        <span class="value highlight">A2-s1,d0 <span class="unit-note" data-zh="不燃 · 无烟 · 无熔滴" data-en="Non-combustible · No smoke · No droplets">不燃 · 无烟 · 无熔滴</span></span>
-      </div>
-      <div class="spec-item">
-        <span class="label" data-zh="标准尺寸" data-en="STANDARD SIZE">标准尺寸</span>
-        <span class="value">1220 × 2440 mm <span class="unit-note" data-zh="可定制最大 1250 × 3200 mm" data-en="Max custom 1250 × 3200 mm">可定制最大 1250 × 3200 mm</span></span>
-      </div>
-      <div class="spec-item">
-        <span class="label" data-zh="总厚度" data-en="TOTAL THICKNESS">总厚度</span>
-        <span class="value">3mm / 4mm / 5mm / 6mm</span>
-      </div>
-      <div class="spec-item">
-        <span class="label" data-zh="面板铝厚" data-en="SKIN THICKNESS">面板铝厚</span>
-        <span class="value">0.30 / 0.40 / 0.50 mm <span class="unit-note" data-zh="双面等厚" data-en="Equal thickness both sides">双面等厚</span></span>
-      </div>
-      <div class="spec-item">
-        <span class="label" data-zh="涂层" data-en="COATING">涂层</span>
-        <span class="value">PVDF / PE <span class="unit-note" data-zh="Kynar 500 氟碳树脂" data-en="Kynar 500 fluoropolymer">Kynar 500 氟碳树脂</span></span>
-      </div>
-      <div class="spec-item">
-        <span class="label" data-zh="剥离强度" data-en="PEEL STRENGTH">剥离强度</span>
-        <span class="value highlight">≥120 N <span class="unit-note" data-zh="180° 剥离测试" data-en="180° Peel test">180° 剥离测试</span></span>
-      </div>
-      <div class="spec-item">
-        <span class="label" data-zh="总热值" data-en="CALORIFIC VALUE">总热值</span>
-        <span class="value">2.7 MJ/Kg <span class="unit-note" data-zh="远低于 A2 ≤3.0 标准" data-en="Well below A2 ≤3.0 limit">远低于 A2 ≤3.0 标准</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="right"></div>
-  <div class="page-num">05</div>
-</div>
-
-<!-- P6: CERTIFICATIONS -->
-<div class="page p6-cert page-dark">
-  <div class="section-header">
-    <h2 class="section-title"><span data-zh="国际认证" data-en="GLOBAL">国际认证</span></h2>
-  </div>
-  <div class="cert-grid">
-    <div class="cert-card">
-      <div class="flag">🇨🇳</div>
-      <div class="region" data-zh="中国" data-en="CHINA">中国</div>
-      <div class="name">GB 8624</div>
-      <div class="std" data-zh="A2级不燃材料" data-en="Class A2 Non-Combustible">A2级不燃材料</div>
-    </div>
-    <div class="cert-card">
-      <div class="flag">🇪🇺</div>
-      <div class="region" data-zh="欧盟" data-en="EU">欧盟</div>
-      <div class="name">EN 13501-1</div>
-      <div class="std">A2-s1,d0</div>
-    </div>
-    <div class="cert-card">
-      <div class="flag">🇬🇧</div>
-      <div class="region" data-zh="英国" data-en="UK">英国</div>
-      <div class="name">BS 476-6/7</div>
-      <div class="std" data-zh="Class 0 防火" data-en="Class 0 Fire">Class 0 防火</div>
-    </div>
-    <div class="cert-card">
-      <div class="flag">🇺🇸</div>
-      <div class="region" data-zh="美国" data-en="USA">美国</div>
-      <div class="name">ASTM E84</div>
-      <div class="std">Class A</div>
-    </div>
-    <div class="cert-card">
-      <div class="flag">🇺🇸</div>
-      <div class="region" data-zh="美国" data-en="USA">美国</div>
-      <div class="name">NFPA 285</div>
-      <div class="std" data-zh="防火幕墙系统" data-en="Fire Wall System">防火幕墙系统</div>
-    </div>
-    <div class="cert-card">
-      <div class="flag">🌐</div>
-      <div class="region" data-zh="国际" data-en="INT'L">国际</div>
-      <div class="name">ISO 9001</div>
-      <div class="std" data-zh="质量管理体系" data-en="Quality Management">质量管理体系</div>
-    </div>
-  </div>
-  <div class="page-num">06</div>
-</div>
-
-<!-- P7: COLORS -->
-<div class="page p7-colors">
-  <div class="section-header">
-    <h2 class="section-title"><span data-zh="颜色与饰面" data-en="COLORS &">颜色与饰面</span></h2>
-  </div>
-  <div class="color-section">
-    <div class="color-header">
-      <div class="line"></div>
-      <span class="title" data-zh="纯色系列 SOLID COLORS" data-en="SOLID COLORS">纯色系列 SOLID COLORS</span>
-      <div class="line"></div>
-    </div>
-    <div class="color-row">
-      <div class="color-swatch" style="background:#f5f5f5"><span class="name">White</span></div>
-      <div class="color-swatch" style="background:#c0c0c0"><span class="name">Silver</span></div>
-      <div class="color-swatch" style="background:#808080"><span class="name">Gray</span></div>
-      <div class="color-swatch" style="background:#1a1a1a"><span class="name">Black</span></div>
-      <div class="color-swatch" style="background:#c9a961"><span class="name">Gold</span></div>
-      <div class="color-swatch" style="background:#8B4513"><span class="name">Bronze</span></div>
-    </div>
-  </div>
-  <div class="color-section">
-    <div class="color-header">
-      <div class="line"></div>
-      <span class="title" data-zh="金属色系列 METALLIC" data-en="METALLIC">金属色系列 METALLIC</span>
-      <div class="line"></div>
-    </div>
-    <div class="color-row">
-      <div class="color-swatch" style="background:linear-gradient(135deg,#e8e8e8,#b8b8b8)"><span class="name">Aluminum</span></div>
-      <div class="color-swatch" style="background:linear-gradient(135deg,#d4af37,#aa8c2c)"><span class="name">Gold Mica</span></div>
-      <div class="color-swatch" style="background:linear-gradient(135deg,#cd7f32,#8b4513)"><span class="name">Copper</span></div>
-      <div class="color-swatch" style="background:linear-gradient(135deg,#71797E,#2c3539)"><span class="name">Gunmetal</span></div>
-    </div>
-  </div>
-  <div class="color-section">
-    <div class="color-header">
-      <div class="line"></div>
-      <span class="title" data-zh="特殊饰面 SPECIAL" data-en="SPECIAL FINISHES">特殊饰面 SPECIAL</span>
-      <div class="line"></div>
-    </div>
-    <div class="color-row">
-      <div class="color-swatch" style="background:linear-gradient(45deg,#d4d4d4 25%,transparent 25%,transparent 50%,#d4d4d4 50%,#d4d4d4 75%,transparent 75%);background-size:20px 20px;background-color:#f0f0f0"><span class="name">Brushed</span></div>
-      <div class="color-swatch" style="background:#1a1a1a;box-shadow:inset 0 0 20px rgba(255,255,255,0.1)"><span class="name">Mirror</span></div>
-      <div class="color-swatch" style="background:#3d3d3d"><span class="name">Stone</span></div>
-      <div class="color-swatch" style="background:#8B4513"><span class="name">Wood</span></div>
-    </div>
-  </div>
-  <div class="page-num">07</div>
-</div>
-
-<!-- P8: APPLICATIONS -->
-<div class="page p8-apps">
-  <div class="section-header">
-    <h2 class="section-title"><span data-zh="应用领域" data-en="APPLICATIONS">应用领域</span></h2>
-  </div>
-  <div class="app-grid">
-    <div class="app-card">
-      <img src="images/hero-b3.jpg" alt="">
-      <div class="overlay"></div>
-      <div class="content">
-        <div class="num">01</div>
-        <div class="title" data-zh="高层建筑幕墙" data-en="High-Rise Curtain Wall">高层建筑幕墙</div>
-        <div class="desc" data-zh="A2防火等级，满足超高层安全规范" data-en="A2 fire rating for high-rise safety">A2防火等级，满足超高层安全规范</div>
-      </div>
-    </div>
-    <div class="app-card">
-      <img src="images/hero-b2.jpg" alt="">
-      <div class="overlay"></div>
-      <div class="content">
-        <div class="num">02</div>
-        <div class="title" data-zh="商业综合体" data-en="Commercial Complex">商业综合体</div>
-        <div class="desc" data-zh="零吸水，适应各种气候环境" data-en="Zero absorption for all climates">零吸水，适应各种气候环境</div>
-      </div>
-    </div>
-    <div class="app-card">
-      <img src="images/hero-3.jpg" alt="">
-      <div class="overlay"></div>
-      <div class="content">
-        <div class="num">03</div>
-        <div class="title" data-zh="机场 / 车站" data-en="Airport / Transit">机场 / 车站</div>
-        <div class="desc" data-zh="公共交通A级防火要求首选" data-en="First choice for public transit A-fire requirements">公共交通A级防火要求首选</div>
-      </div>
-    </div>
-    <div class="app-card">
-      <img src="images/panel-color.jpg" alt="">
-      <div class="overlay"></div>
-      <div class="content">
-        <div class="num">04</div>
-        <div class="title" data-zh="医院 / 学校" data-en="Hospital / School">医院 / 学校</div>
-        <div class="desc" data-zh="安全环保，人员密集场所适用" data-en="Safe & eco-friendly for crowded places">安全环保，人员密集场所适用</div>
-      </div>
-    </div>
-    <div class="app-card">
-      <img src="images/panel-stack.png" alt="">
-      <div class="overlay"></div>
-      <div class="content">
-        <div class="num">05</div>
-        <div class="title" data-zh="工业建筑" data-en="Industrial Building">工业建筑</div>
-        <div class="desc" data-zh="耐腐蚀、耐候性强" data-en="Corrosion & weather resistant">耐腐蚀、耐候性强</div>
-      </div>
-    </div>
-    <div class="app-card">
-      <img src="images/factory.jpg" alt="">
-      <div class="overlay"></div>
-      <div class="content">
-        <div class="num">06</div>
-        <div class="title" data-zh="酒店 / 办公" data-en="Hotel / Office">酒店 / 办公</div>
-        <div class="desc" data-zh="高端饰面效果，多样设计选择" data-en="Premium finishes, diverse design options">高端饰面效果，多样设计选择</div>
-      </div>
-    </div>
-  </div>
-  <div class="page-num">08</div>
-</div>
-
-<!-- P9: PROJECTS -->
-<div class="page p9-projects">
-  <div class="section-header">
-    <h2 class="section-title"><span data-zh="项目案例" data-en="PROJECTS">项目案例</span></h2>
-  </div>
-  <div class="project-showcase">
-    <div class="project-card">
-      <div class="image">
-        <img src="images/shanghai-theatre.jpg" alt="">
-      </div>
-      <div class="location">SHANGHAI, CHINA</div>
-      <h3 class="name" data-zh="上海歌剧院" data-en="Shanghai Opera House">上海歌剧院</h3>
-      <p class="desc" data-zh="采用HENDO A2金属复合板作为外立面幕墙材料，零吸水特性确保沿海地区高湿度环境下的长期稳定性。" data-en="HENDO A2 panels used for exterior curtain wall. Zero absorption ensures long-term stability in the humid coastal environment.">采用HENDO A2金属复合板作为外立面幕墙材料，零吸水特性确保沿海地区高湿度环境下的长期稳定性。</p>
-    </div>
-    <div class="project-card">
-      <div class="image">
-        <img src="images/panzhihua-theatre.jpg" alt="">
-      </div>
-      <div class="location">PANZHIHUA, CHINA</div>
-      <h3 class="name" data-zh="攀枝花大剧院" data-en="Panzhihua Grand Theatre">攀枝花大剧院</h3>
-      <p class="desc" data-zh="地标性文化建筑，选用金色金属复合板呈现高雅外观，A2防火等级满足公共建筑安全标准。" data-en="Landmark cultural building featuring gold metallic panels. A2 fire rating meets public building safety standards.">地标性文化建筑，选用金色金属复合板呈现高雅外观，A2防火等级满足公共建筑安全标准。</p>
-    </div>
-  </div>
-  <div class="page-num">09</div>
-</div>
-
-<!-- P10: CONTACT -->
-<div class="page p10-contact page-dark">
-  <div class="left">
-    <div class="contact-logo">HENDO</div>
-    <div class="contact-tagline" data-zh="全球首创零吸水A2不燃金属复合板" data-en="WORLD'S FIRST ZERO ABSORPTION A2 PANEL">全球首创零吸水A2不燃金属复合板</div>
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="icon">◎</div>
-        <div class="content">
-          <div class="label" data-zh="公司名称" data-en="COMPANY">公司名称</div>
-          <div class="value" data-zh="四川恒度新材料科技有限公司" data-en="Sichuan Hengdu New Material Technology Co., Ltd.">四川恒度新材料科技有限公司</div>
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-inner">
+    <div class="section-label">Products</div>
+    <div class="section-title">产品中心</div>
+    <div class="section-sub">从芯材到成品，全产业链自主可控，提供一体化A2防火解决方案</div>
+    <div class="prod-grid">
+      <div class="prod-card featured" data-star="★ 主打产品">
+        <img src="images/panel-stack.png" alt="A2铝塑复合板">
+        <div class="prod-body">
+          <h3>A2 不燃金属复合板</h3>
+          <p>挤出型A2无机芯材 + 金属面板，零吸水、高剥离强度。通过EN 13501-1 / GB 8624 / BS 476 / ASTM E84全项认证。日产5,000㎡。</p>
+          <div class="prod-specs">
+            <span>板厚 2-6mm</span><span>铝厚 0.2-0.5mm</span><span>宽度 ≤2000mm</span><span>聚酯/氟碳</span><span>产能 5000㎡/天</span>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="icon">◉</div>
-        <div class="content">
-          <div class="label" data-zh="生产基地" data-en="FACTORY">生产基地</div>
-          <div class="value" data-zh="四川省眉山市彭山区谢家街道石化大道5号" data-en="No.5 Shihua Avenue, Xiejia Street, Pengshan District, Meishan, Sichuan, China">四川省眉山市彭山区谢家街道石化大道5号</div>
+      <div class="prod-card">
+        <img src="images/granules-opt.jpg" alt="A2芯料颗粒">
+        <div class="prod-body">
+          <h3>A2 不燃挤出芯料颗粒</h3>
+          <p>无机-有机超分子耦联颗粒料，可直接用于螺杆挤出生产A2芯材。8条生产线，日产200吨。适合拥有挤出产线的企业自主生产。</p>
+          <div class="prod-specs">
+            <span>无机含量≥90%</span><span>A2级</span><span>8条产线</span><span>日产200吨</span>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="icon">✉</div>
-        <div class="content">
-          <div class="label">EMAIL</div>
-          <div class="value">tenggua2@163.com</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="icon">☎</div>
-        <div class="content">
-          <div class="label" data-zh="电话" data-en="PHONE">电话</div>
-          <div class="value">+86 28 XXXX XXXX</div>
+      <div class="prod-card">
+        <img src="images/rolls-opt.jpg" alt="A2芯料卷材">
+        <div class="prod-body">
+          <h3>A2 不燃芯料卷材</h3>
+          <p>连续挤出成卷，可直接与金属板热复合。节省芯料生产环节，适合无挤出线的铝塑板企业。日产50吨。</p>
+          <div class="prod-specs">
+            <span>卷材形式</span><span>日产50吨</span><span>可定制厚度</span><span>即复即用</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="right"></div>
-  <div class="page-num">10</div>
+</section>
+
+<!-- TECH -->
+<section id="tech" style="background:rgba(255,255,255,0.01);">
+  <div class="section-inner">
+    <div class="section-label">Technology</div>
+    <div class="section-title">核心优势</div>
+    <div class="section-sub">长期攻关，从实验室到量产线——每一项都是行业壁垒</div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="icon">🧪</div>
+        <h4>无机-有机超分子耦联</h4>
+        <p>自主知识产权技术，将无机阻燃剂与有机高分子在分子层面耦联，实现≥90%矿物填充仍可螺杆挤出——全球首创。</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">💧</div>
+        <h4>零吸水芯材</h4>
+        <p>传统A2芯材因矿物含量高，吸水率达3%-7%，导致剥离强度下降20%以上。恒度挤出型A2芯材吸水率趋于零，金属板在任何湿度环境保持力学性能不衰减。</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">⚡</div>
+        <h4>螺杆挤出连续生产</h4>
+        <p>挤出速度 >3m/min，远高于传统热压法的 <2m/min。连续化生产保证批次一致性，50吨/天的芯卷产出能力满足大单交期。</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">♻️</div>
+        <h4>废料100%回收</h4>
+        <p>生产边角余料经处理后可回用至芯材挤出，零浪费生产。在终端客户处，施工边角料也具备回收再制造价值。</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">🛡️</div>
+        <h4>全项国际认证</h4>
+        <p>已取得中国、欧盟、英国、美国四大经济体的A2级不燃认证，是全球为数不多的、真正具备出口资质的A2铝塑板品牌。</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">🏭</div>
+        <h4>完整产业链</h4>
+        <p>从芯料颗粒→芯材卷材→复合板成品，全链条自产，品质可控、交期可控、成本可控。客户可按需采购任一中间产品。</p>
+      </div>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th style="width:36%">对比维度</th><th style="width:32%">传统A2铝塑板</th><th style="width:32%">恒度挤出A2</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>芯材工艺</td><td>矿物填充 + 热压成型</td><td>无机-有机超分子耦联 + 螺杆挤出</td></tr>
+        <tr class="win"><td class="first">芯材吸水</td><td>3%-7%（随湿度持续吸水）</td><td>趋于 0%</td></tr>
+        <tr class="win"><td class="first">剥离强度下降</td><td>潮湿后下降 >20%</td><td>不下降</td></tr>
+        <tr class="win"><td class="first">芯材韧性</td><td>脆性大，折弯易裂</td><td>延伸率好，柔韧不开裂</td></tr>
+        <tr class="win"><td class="first">铝塑复合方式</td><td>高温热压 + 粘结膜</td><td>连续热复合 + 粘结膜</td></tr>
+        <tr class="win"><td class="first">生产效率</td><td>热压 < 2 m/min</td><td>挤出 > 3 m/min</td></tr>
+        <tr><td>产品一致性</td><td>批次差异大</td><td>连续生产，批次一致性好</td></tr>
+        <tr class="win"><td class="first">回收</td><td>不可回收/难度大</td><td>可回收</td></tr>
+        <tr><td>综合成本</td><td>工艺成熟，但不良率高</td><td>自动化率高，不良率低</td></tr>
+        <tr class="win"><td class="first">物流损耗</td><td>芯材吸水致重量增加/运输损耗</td><td>不吸水，运输损耗低</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs">
+  <div class="section-inner">
+    <div class="section-label">Technical Data</div>
+    <div class="section-title">技术参数</div>
+    <div class="section-sub">以下数据由SGS依据EN 13501-1 / GB 8624-2012标准检测</div>
+
+    <div class="spec-group">
+      <h4>A2 不燃金属复合板</h4>
+      <table class="spec-table">
+        <tr><th>项目</th><th>标准</th><th>指标值</th></tr>
+        <tr><td>总厚度</td><td>GB/T 17748-2008</td><td>2mm / 3mm / 4mm / 5mm / 6mm</td></tr>
+        <tr><td>铝合金面板厚度</td><td>GB/T 17748-2008</td><td>0.2mm / 0.3mm / 0.4mm / 0.5mm</td></tr>
+        <tr><td>宽度</td><td>—</td><td>≤2000mm（可定制）</td></tr>
+        <tr><td>燃烧等级</td><td>GB 8624-2012</td><td>A2-s1,d0</td></tr>
+        <tr><td>燃烧等级</td><td>EN 13501-1</td><td>A2-s1,d0</td></tr>
+        <tr><td>燃烧等级</td><td>BS 476-6 &amp; 7</td><td>Class 0 + Class 1</td></tr>
+        <tr><td>表面燃烧</td><td>ASTM E84</td><td>Class 1 (FS ≤25, SD ≤50)</td></tr>
+        <tr><td>幕墙燃烧</td><td>NFPA 285</td><td>PASS</td></tr>
+        <tr><td>剥离强度</td><td>GB/T 17748</td><td>≥ 120 N/mm</td></tr>
+        <tr><td>弯曲强度</td><td>GB/T 17748</td><td>≥ 150 MPa</td></tr>
+        <tr><td>面铝涂层</td><td>—</td><td>氟碳喷涂（PVDF）/ 聚酯PE / 定制</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-group">
+      <h4>A2 不燃挤出芯料颗粒</h4>
+      <table class="spec-table">
+        <tr><th>项目</th><th>指标值</th></tr>
+        <tr><td>成分</td><td>无机含量 ≥90%</td></tr>
+        <tr><td>阻燃等级</td><td>A2级</td></tr>
+        <tr><td>加工方式</td><td>双螺杆挤出 / 单螺杆挤出</td></tr>
+        <tr><td>日产量</td><td>200吨（8条生产线）</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-group">
+      <h4>A2 不燃芯料卷材</h4>
+      <table class="spec-table">
+        <tr><th>项目</th><th>指标值</th></tr>
+        <tr><td>形式</td><td>连续挤出卷材</td></tr>
+        <tr><td>日产量</td><td>50吨（1条生产线）</td></tr>
+        <tr><td>用途</td><td>铝塑板复合 / 其他夹芯结构复合</td></tr>
+        <tr><td>加工方式</td><td>连续热复合</td></tr>
+        <tr><td>优势</td><td>不吸水，易加工</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs" style="background:rgba(255,255,255,0.01);">
+  <div class="section-inner">
+    <div class="section-label">Certifications</div>
+    <div class="section-title">国际认证</div>
+    <div class="section-sub">全球四大经济体A2级不燃认证全部就位</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="flag">🇨🇳</div>
+        <div class="standard">GB 8624-2012</div>
+        <div class="grade">SGS &amp; 国家建材检测中心</div>
+        <div class="tag">A2-s1,d0</div>
+      </div>
+      <div class="cert-card">
+        <div class="flag">🇪🇺</div>
+        <div class="standard">EN 13501-1</div>
+        <div class="grade">SGS 认证</div>
+        <div class="tag">A2-s1,d0</div>
+      </div>
+      <div class="cert-card">
+        <div class="flag">🇬🇧</div>
+        <div class="standard">BS 476-6 &amp; 7</div>
+        <div class="grade">UKAS 认可实验室</div>
+        <div class="tag">Class 0 + Class 1</div>
+      </div>
+      <div class="cert-card">
+        <div class="flag">🇺🇸</div>
+        <div class="standard">ASTM E84</div>
+        <div class="grade">Intertek / UL</div>
+        <div class="tag">Class 1</div>
+      </div>
+      <div class="cert-card">
+        <div class="flag">🇺🇸</div>
+        <div class="standard">NFPA 285</div>
+        <div class="grade">幕墙全尺寸燃烧</div>
+        <div class="tag">PASS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="section-inner">
+    <div class="section-label">Portfolio</div>
+    <div class="section-title">标杆案例</div>
+    <div class="section-sub">产品已成功应用于国内大型文化公共建筑</div>
+    <div class="case-grid">
+      <div class="case-card">
+        <img src="images/shanghai-theatre.jpg" alt="上海歌剧院">
+        <div class="case-body">
+          <h4>上海歌剧院</h4>
+          <div class="loc">中国 · 上海</div>
+          <p>上海城市文化新地标。A2不燃复合板应用于建筑外幕墙系统，满足大型公共建筑最严苛的防火安全要求。（OEM合作：艾努巴）</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <img src="images/panzhihua-theatre.jpg" alt="攀枝花大剧院">
+        <div class="case-body">
+          <h4>攀枝花大剧院</h4>
+          <div class="loc">中国 · 四川</div>
+          <p>西南地区重要文化场馆。A2不燃复合板幕墙在高温干燥与雨季潮湿交替气候下，力学性能保持稳定，未出现吸水剥离问题。（OEM合作：艾努巴）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:rgba(255,255,255,0.01);">
+  <div class="section-inner">
+    <div class="section-label">About Us</div>
+    <div class="section-title">关于恒度</div>
+    <div class="about-text">
+      江苏恒度相变科技有限公司成立于2023年，坐落于江苏省宿迁市。公司由四川大学教授、中科院博士后领衔研发团队，攻克"无机-有机超分子耦联"核心技术，建成全球第一条螺杆挤出A2级不燃芯材生产线。<br><br>
+      旗下拥有A2颗粒生产线8条（产能200吨/天）、A2芯卷生产线1条（产能50吨/天）、金属复合板生产线2条（产能5,000㎡/天），并拥有五项发明专利及SGS、Intertek/UL等国际权威检测认证。恒度不仅是A2芯材原料供应商，更是世界唯一具备全套A2不燃金属板自主生产能力的制造商。
+    </div>
+    <div class="about-stats">
+      <div class="item"><div class="n">14</div><div class="l">年技术攻关</div></div>
+      <div class="item"><div class="n">5</div><div class="l">发明专利</div></div>
+      <div class="item"><div class="n">5</div><div class="l">国际认证</div></div>
+      <div class="item"><div class="n">11</div><div class="l">条生产线</div></div>
+    </div>
+    <img class="about-img" src="images/factory.jpg" alt="恒度工厂" style="border:1px solid rgba(200,164,92,0.15)">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <div class="section-title">联系询价</div>
+    <div class="section-sub">全球直销，欢迎幕墙承包商、分销商、工程甲方直接询价</div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h4>江苏恒度相变科技有限公司</h4>
+        <p class="sub">Jiangsu Hengdu Phase Change Technology Co., Ltd.</p>
+        <div class="row"><span class="key">地址</span>江苏省宿迁市上海路755号</div>
+        <div class="row"><span class="key">邮箱</span>chen690427@163.com</div>
+        <div class="row"><span class="key">模式</span>全球直销，无中间代理</div>
+      </div>
+      <div>
+        <form class="contact-form" id="contactForm">
+          <select required name="inquiry_type" id="zh-inquiry-type">
+            <option value="">询价类别 *</option>
+            <option value="A2 不燃金属复合板">A2 不燃金属复合板</option>
+            <option value="A2 不燃芯料颗粒">A2 不燃芯料颗粒</option>
+            <option value="A2 不燃芯料卷材">A2 不燃芯料卷材</option>
+            <option value="其他">其他 / Other</option>
+          </select>
+          <input type="text" name="user_name" id="zh-name" placeholder="姓名 / Name *" required>
+          <input type="email" name="user_email" id="zh-email" placeholder="邮箱 / Email *" required>
+          <input type="text" name="user_country" id="zh-country" placeholder="国家 / Country">
+          <textarea name="message" id="zh-details" placeholder="请描述您的需求：板厚、铝厚、尺寸、涂层、数量等"></textarea>
+          <button type="submit" id="zh-submit-btn">发送询价</button>
+          <div class="form-msg" id="zh-form-msg" style="display:none;margin-top:12px;padding:10px;border-radius:6px;font-size:13px;"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Jiangsu Hengdu Phase Change Technology Co., Ltd. All Rights Reserved.
+</footer>
 </div>
 
-</div><!-- /brochure -->
+<!-- ======== EN LAYER ======== -->
+<div id="en-layer" class="lang-hidden">
+<section class="hero">
+  <div class="hero-badge">World's First · Industry Unique</div>
+  <h1>Extruded <em>Zero-Absorption</em><br>A2 Non-Combustible ACP</h1>
+  <p class="desc">We solved the organic-inorganic supramolecular coupling breakthrough. The world's first screw-extruded A2 non-combustible core production line. Zero water absorption, high peel strength, fully recyclable — the next-generation fire-rated facade material.</p>
+  <img class="hero-img" src="images/hero-building.jpg" alt="Modern Architecture Facade">
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">5,000</div>
+      <div class="label">ACP Daily Capacity (sqm)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">200</div>
+      <div class="label">Granules Daily Output (tons)</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">0<span class="unit">%</span></div>
+      <div class="label">Core Water Absorption</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">5</div>
+      <div class="label">Global Fire Certifications</div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-inner">
+    <div class="section-label">Products</div>
+    <div class="section-title">Product Range</div>
+    <div class="section-sub">From core granules to finished panels — fully integrated A2 fireproof solutions</div>
+    <div class="prod-grid">
+      <div class="prod-card featured" data-star="★ Featured">
+        <img src="images/panel-stack.png" alt="A2 ACP">
+        <div class="prod-body">
+          <h3>A2 Non-Combustible ACP</h3>
+          <p>Extruded A2 inorganic core + metal skins. Zero water absorption, superior peel strength. Certified to EN 13501-1 / GB 8624 / BS 476 / ASTM E84. 5,000 sqm/day.</p>
+          <div class="prod-specs">
+            <span>Thickness 2-6mm</span><span>Al 0.2-0.5mm</span><span>Width ≤2000mm</span><span>PE/PVDF</span><span>5,000 sqm/day</span>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="images/granules-opt.jpg" alt="A2 Core Granules">
+        <div class="prod-body">
+          <h3>A2 Non-Combustible Core Granules</h3>
+          <p>Organic-inorganic supramolecular coupled granules for screw extrusion. 8 production lines, 200 tons/day. For manufacturers with existing extrusion lines.</p>
+          <div class="prod-specs">
+            <span>Inorganic ≥90%</span><span>A2 rated</span><span>8 lines</span><span>200 tons/day</span>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="images/rolls-opt.jpg" alt="A2 Core Rolls">
+        <div class="prod-body">
+          <h3>A2 Non-Combustible Core Rolls</h3>
+          <p>Continuous extruded core film on roll, ready for hot lamination with metal skins. Eliminates in-house extrusion. 50 tons/day for composite panel manufacturers.</p>
+          <div class="prod-specs">
+            <span>Roll format</span><span>50 tons/day</span><span>Custom thickness</span><span>Ready to laminate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tech" style="background:rgba(255,255,255,0.01);">
+  <div class="section-inner">
+    <div class="section-label">Technology</div>
+    <div class="section-title">Core Advantages</div>
+    <div class="section-sub">From lab to mass production — every advantage is an industry barrier</div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="icon">🧪</div>
+        <h4>Supramolecular Coupling</h4>
+        <p>Proprietary technology couples inorganic flame retardants with organic polymers at the molecular level, enabling screw extrusion at ≥90% mineral loading — a world first.</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">💧</div>
+        <h4>Zero Water Absorption</h4>
+        <p>Conventional A2 cores absorb 3%-7% moisture, causing ≥20% peel strength loss. Hengdu's extruded core has near-zero absorption. The composite panel maintains mechanical properties in any humidity.</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">⚡</div>
+        <h4>Screw Extrusion Production</h4>
+        <p>Extrusion speed >3 m/min vs conventional hot-press <2 m/min. Continuous process guarantees batch consistency. 50-ton daily core roll output for large orders.</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">♻️</div>
+        <h4>100% Recyclable Waste</h4>
+        <p>Production offcuts can be processed and reused in core extrusion — zero-waste manufacturing. At the customer's site, installation scrap also has recycling value.</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">🛡️</div>
+        <h4>Complete Global Certifications</h4>
+        <p>A2 non-combustible certified across all four major economic zones: China, EU, UK, and USA. One of very few ACP brands genuinely ready for global export.</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">🏭</div>
+        <h4>Full Vertical Integration</h4>
+        <p>From granules → core rolls → finished ACP — the entire chain is in-house. Controlled quality, predictable lead times, competitive cost. Buy any intermediate product as needed.</p>
+      </div>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th style="width:36%">Dimension</th><th style="width:32%">Conventional A2 ACP</th><th style="width:32%">Hengdu Extruded A2</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Core process</td><td>Mineral-filled + hot-press</td><td>Supramolecular coupling + screw extrusion</td></tr>
+        <tr class="win"><td class="first">Water absorption</td><td>3%-7% (continuous)</td><td>~0%</td></tr>
+        <tr class="win"><td class="first">Peel strength loss</td><td>>20% after moisture</td><td>None</td></tr>
+        <tr class="win"><td class="first">Core flexibility</td><td>Brittle, cracks on bending</td><td>Good elongation, bendable</td></tr>
+        <tr class="win"><td class="first">Bonding method</td><td>Hot-press + adhesive film</td><td>Continuous hot lamination + adhesive film</td></tr>
+        <tr class="win"><td class="first">Production speed</td><td>< 2 m/min</td><td>> 3 m/min</td></tr>
+        <tr><td>Batch consistency</td><td>Significant variation</td><td>Continuous process, high consistency</td></tr>
+        <tr class="win"><td class="first">Recyclability</td><td>Difficult / not possible</td><td>Fully recyclable</td></tr>
+        <tr><td>Overall cost</td><td>Mature but high defect rate</td><td>High automation, low defect rate</td></tr>
+        <tr class="win"><td class="first">Transport loss</td><td>Moisture weight gain / damage</td><td>No moisture gain, lower logistics loss</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="specs">
+  <div class="section-inner">
+    <div class="section-label">Technical Data</div>
+    <div class="section-title">Specifications</div>
+    <div class="section-sub">Data tested by SGS to EN 13501-1 / GB 8624-2012 / BS 476 / ASTM E84 / NFPA 285</div>
+
+    <div class="spec-group">
+      <h4>A2 Non-Combustible ACP</h4>
+      <table class="spec-table">
+        <tr><th>Property</th><th>Standard</th><th>Value</th></tr>
+        <tr><td>Total thickness</td><td>GB/T 17748-2008</td><td>2mm / 3mm / 4mm / 5mm / 6mm</td></tr>
+        <tr><td>Aluminum skin thickness</td><td>GB/T 17748-2008</td><td>0.2mm / 0.3mm / 0.4mm / 0.5mm</td></tr>
+        <tr><td>Width</td><td>—</td><td>≤2000mm (customizable)</td></tr>
+        <tr><td>Fire classification</td><td>GB 8624-2012</td><td>A2-s1,d0</td></tr>
+        <tr><td>Fire classification</td><td>EN 13501-1</td><td>A2-s1,d0</td></tr>
+        <tr><td>Fire classification</td><td>BS 476-6 &amp; 7</td><td>Class 0 + Class 1</td></tr>
+        <tr><td>Surface burning</td><td>ASTM E84</td><td>Class 1 (FS ≤25, SD ≤50)</td></tr>
+        <tr><td>Facade full-scale fire</td><td>NFPA 285</td><td>PASS</td></tr>
+        <tr><td>Peel strength</td><td>GB/T 17748</td><td>≥ 120 N/mm</td></tr>
+        <tr><td>Flexural strength</td><td>GB/T 17748</td><td>≥ 150 MPa</td></tr>
+        <tr><td>Face coating</td><td>—</td><td>PVDF / PE / Custom</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-group">
+      <h4>A2 Core Granules</h4>
+      <table class="spec-table">
+        <tr><th>Property</th><th>Value</th></tr>
+        <tr><td>Composition</td><td>Inorganic content ≥90%</td></tr>
+        <tr><td>Flame retardancy</td><td>A2 rated</td></tr>
+        <tr><td>Processing</td><td>Twin-screw / single-screw extrusion</td></tr>
+        <tr><td>Daily output</td><td>200 tons (8 lines)</td></tr>
+      </table>
+    </div>
+
+    <div class="spec-group">
+      <h4>A2 Core Rolls</h4>
+      <table class="spec-table">
+        <tr><th>Property</th><th>Value</th></tr>
+        <tr><td>Format</td><td>Continuous extruded roll</td></tr>
+        <tr><td>Daily output</td><td>50 tons (1 line)</td></tr>
+        <tr><td>Application</td><td>ACP lamination / sandwich panel lamination</td></tr>
+        <tr><td>Processing</td><td>Continuous hot lamination</td></tr>
+        <tr><td>Advantage</td><td>Zero water absorption, easy to process</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="certs" style="background:rgba(255,255,255,0.01);">
+  <div class="section-inner">
+    <div class="section-label">Certifications</div>
+    <div class="section-title">Global Certifications</div>
+    <div class="section-sub">A2 non-combustible certified across all four major economic zones</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="flag">🇨🇳</div>
+        <div class="standard">GB 8624-2012</div>
+        <div class="grade">SGS &amp; National Center</div>
+        <div class="tag">A2-s1,d0</div>
+      </div>
+      <div class="cert-card">
+        <div class="flag">🇪🇺</div>
+        <div class="standard">EN 13501-1</div>
+        <div class="grade">Certified by SGS</div>
+        <div class="tag">A2-s1,d0</div>
+      </div>
+      <div class="cert-card">
+        <div class="flag">🇬🇧</div>
+        <div class="standard">BS 476-6 &amp; 7</div>
+        <div class="grade">UKAS Accredited Lab</div>
+        <div class="tag">Class 0 + 1</div>
+      </div>
+      <div class="cert-card">
+        <div class="flag">🇺🇸</div>
+        <div class="standard">ASTM E84</div>
+        <div class="grade">Intertek / UL</div>
+        <div class="tag">Class 1</div>
+      </div>
+      <div class="cert-card">
+        <div class="flag">🇺🇸</div>
+        <div class="standard">NFPA 285</div>
+        <div class="grade">Full-Scale Facade Fire</div>
+        <div class="tag">PASS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="section-inner">
+    <div class="section-label">Portfolio</div>
+    <div class="section-title">Landmark Projects</div>
+    <div class="section-sub">Our A2 panels have been used in major cultural and public buildings across China</div>
+    <div class="case-grid">
+      <div class="case-card">
+        <img src="images/shanghai-theatre.jpg" alt="Shanghai Grand Theatre">
+        <div class="case-body">
+          <h4>Shanghai Grand Theatre</h4>
+          <div class="loc">Shanghai, China</div>
+          <p>Shanghai's iconic cultural landmark. A2 non-combustible panels were installed on the building facade, meeting the strictest fire safety codes for large public venues. (OEM: Ainuba)</p>
+        </div>
+      </div>
+      <div class="case-card">
+        <img src="images/panzhihua-theatre.jpg" alt="Panzhihua Grand Theatre">
+        <div class="case-body">
+          <h4>Panzhihua Grand Theatre</h4>
+          <div class="loc">Sichuan, China</div>
+          <p>Major cultural venue in southwestern China. The A2 panels maintained stable mechanical performance in a climate alternating between dry heat and humid monsoons, with zero moisture-related delamination. (OEM: Ainuba)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:rgba(255,255,255,0.01);">
+  <div class="section-inner">
+    <div class="section-label">About Us</div>
+    <div class="section-title">About Hengdu</div>
+    <div class="about-text">
+      Jiangsu Hengdu Phase Change Technology Co., Ltd. was founded in 2023 in Suqian, China. Our R&amp;D team is led by professors from Sichuan University and postdoctoral researchers from the Chinese Academy of Sciences. We cracked the "organic-inorganic supramolecular coupling" barrier to build the world's first screw-extrusion production line for A2 non-combustible core material.<br><br>
+      Our facility operates 8 A2 granule lines (200 tons/day), 1 core roll line (50 tons/day), 2 ACP finishing lines (5,000 sqm/day), supported by 5 invention patents and global certifications from SGS and Intertek/UL. Hengdu is not just a raw material supplier — we are the world's only fully-integrated manufacturer of extruded A2 non-combustible metal composite panels.
+    </div>
+    <div class="about-stats">
+      <div class="item"><div class="n">14</div><div class="l">Years R&amp;D</div></div>
+      <div class="item"><div class="n">5</div><div class="l">Patents</div></div>
+      <div class="item"><div class="n">5</div><div class="l">Global Certs</div></div>
+      <div class="item"><div class="n">11</div><div class="l">Production Lines</div></div>
+    </div>
+    <img class="about-img" src="images/factory.jpg" alt="恒度工厂" style="border:1px solid rgba(200,164,92,0.15)">
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <div class="section-title">Inquire Now</div>
+    <div class="section-sub">Direct sales worldwide. Facade contractors, distributors, project owners — inquire directly.</div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h4>Jiangsu Hengdu Phase Change Technology Co., Ltd.</h4>
+        <p class="sub">Hengdu Technology</p>
+        <div class="row"><span class="key">Address</span>No. 755 Shanghai Road, Suqian, Jiangsu, China</div>
+        <div class="row"><span class="key">Email</span>chen690427@163.com</div>
+        <div class="row"><span class="key">Model</span>Direct global sales, no intermediaries</div>
+      </div>
+      <div>
+        <form class="contact-form" id="contactFormEn">
+          <select required name="inquiry_type" id="en-inquiry-type">
+            <option value="">Inquiry type *</option>
+            <option value="A2 Non-Combustible ACP">A2 Non-Combustible ACP</option>
+            <option value="A2 Core Granules">A2 Core Granules</option>
+            <option value="A2 Core Rolls">A2 Core Rolls</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="text" name="user_name" id="en-name" placeholder="Full Name *" required>
+          <input type="email" name="user_email" id="en-email" placeholder="Email *" required>
+          <input type="text" name="user_country" id="en-country" placeholder="Country">
+          <textarea name="message" id="en-details" placeholder="Tell us what you need: thickness, aluminum gauge, dimensions, coating, quantity..."></textarea>
+          <button type="submit" id="en-submit-btn">Send Inquiry</button>
+          <div class="form-msg" id="en-form-msg" style="display:none;margin-top:12px;padding:10px;border-radius:6px;font-size:13px;"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Jiangsu Hengdu Phase Change Technology Co., Ltd. All Rights Reserved.
+</footer>
+</div>
 
 <script>
-function setLang(lang){
-  document.body.className='lang-'+lang;
-  document.querySelectorAll('.lang-switch button').forEach(btn=>btn.classList.remove('active'));
-  event.target.classList.add('active');
-}
-// Update page indicator on scroll
-const pages=document.querySelectorAll('.page');
-const indicator=document.querySelector('.page-indicator');
-window.addEventListener('scroll',()=>{
-  const scroll=window.scrollY;
-  const pageHeight=window.innerHeight;
-  const current=Math.floor(scroll/pageHeight)+1;
-  indicator.textContent=String(current).padStart(2,'0')+' / 10';
-});
-</script>
+(function() {
+  var zhLayer = document.getElementById('zh-layer');
+  var enLayer = document.getElementById('en-layer');
+  var btnZh = document.getElementById('btnZh');
+  var btnEn = document.getElementById('btnEn');
+  var navLinks = document.querySelectorAll('.nav-links a');
 
+  function setLang(lang) {
+    if (lang === 'zh') {
+      zhLayer.classList.remove('lang-hidden');
+      enLayer.classList.add('lang-hidden');
+      btnZh.classList.add('active');
+      btnEn.classList.remove('active');
+    } else {
+      zhLayer.classList.add('lang-hidden');
+      enLayer.classList.remove('lang-hidden');
+      btnEn.classList.add('active');
+      btnZh.classList.remove('active');
+    }
+    document.documentElement.lang = lang;
+
+    for (var i = 0; i < navLinks.length; i++) {
+      var a = navLinks[i];
+      var txt = lang === 'zh' ? a.getAttribute('data-zh') : a.getAttribute('data-en');
+      if (txt) a.textContent = txt;
+    }
+  }
+
+  window.setLang = setLang;
+
+  // === Server酱 配置 ===
+  // 去 https://sct.ftqq.com/ 微信登录，获取 SendKey 填入下方
+  var SEND_KEY = 'SCT370549TetIycMSc2HUE6khWjM1JlLVf';
+  var useServerChan = SEND_KEY.indexOf('YOUR_') === -1;
+
+  // === 表单提交处理 ===
+  function setupForm(formId, msgId, btnId, zhLabels) {
+    var form = document.getElementById(formId);
+    var msgEl = document.getElementById(msgId);
+    var btn = document.getElementById(btnId);
+    if (!form) return;
+
+    form.addEventListener('submit', function(ev) {
+      var isZh = (msgId === 'zh-form-msg');
+
+      if (useServerChan) {
+        // Server酱 方案
+        ev.preventDefault();
+        btn.disabled = true;
+        btn.textContent = isZh ? '发送中...' : 'Sending...';
+        msgEl.style.display = 'none';
+
+        var fd = new FormData(form);
+        var title = '[恒度询价] ' + (fd.get('user_name') || fd.get('name') || '') + ' - ' + (fd.get('inquiry_type') || fd.get('type') || '');
+
+        var lines = [];
+        lines.push('## 新询价');
+        var labels = ['姓名', '邮箱', '国家', '类别', '需求'];
+        var keys = ['user_name','user_email','user_country','inquiry_type','message'];
+        for (var i = 0; i < labels.length; i++) {
+          var val = fd.get(keys[i]) || '';
+          lines.push('- **' + labels[i] + '**: ' + val);
+        }
+
+        var body = 'title=' + encodeURIComponent(title) + '&desp=' + encodeURIComponent(lines.join('\n'));
+        fetch('https://sctapi.ftqq.com/' + SEND_KEY + '.send', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+          body: body
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          btn.disabled = false;
+          btn.textContent = isZh ? '发送询价' : 'Send Inquiry';
+          if (data.code === 0) {
+            msgEl.style.display = 'block';
+            msgEl.style.background = 'rgba(76,175,80,0.15)';
+            msgEl.style.color = '#81c784';
+            msgEl.textContent = isZh ? '发送成功！我们会尽快回复。' : 'Sent! We will reply shortly.';
+            form.reset();
+          } else {
+            msgEl.style.display = 'block';
+            msgEl.style.background = 'rgba(244,67,54,0.15)';
+            msgEl.style.color = '#ef9a9a';
+            msgEl.textContent = (isZh ? '发送失败' : 'Send failed') + ': ' + (data.message || data.info || '未知错误');
+          }
+        })
+        .catch(function(err) {
+          btn.disabled = false;
+          btn.textContent = isZh ? '发送询价' : 'Send Inquiry';
+          msgEl.style.display = 'block';
+          msgEl.style.background = 'rgba(244,67,54,0.15)';
+          msgEl.style.color = '#ef9a9a';
+          msgEl.textContent = (isZh ? '网络错误，请重试' : 'Network error, try again');
+        });
+      }
+      // else: 原生表单提交到 FormSubmit
+    });
+  }
+
+  setupForm('contactForm', 'zh-form-msg', 'zh-submit-btn');
+  setupForm('contactFormEn', 'en-form-msg', 'en-submit-btn');
+
+  // 显示 FormSubmit 成功消息（/?sent=1 时）
+  if (window.location.search.indexOf('sent=1') !== -1) {
+    var zhMsg = document.getElementById('zh-form-msg');
+    var enMsg = document.getElementById('en-form-msg');
+    var html = '已收到您的询价！我们会尽快回复。';
+    [zhMsg, enMsg].forEach(function(el) {
+      if (el) {
+        el.style.display = 'block';
+        el.style.background = 'rgba(76,175,80,0.15)';
+        el.style.color = '#81c784';
+        el.innerHTML = html;
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
