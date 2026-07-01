@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
 
-# Block crawling of upload scripts
-Disallow: /upload_website.py
-
 # Sitemap
-Sitemap: https://tenggua2.github.io/hendo-tech/sitemap.xml
+Sitemap: https://hendo-tech.com/sitemap.xml
