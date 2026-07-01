@@ -10,21 +10,28 @@
       <image:title>A2 Non-Combustible Aluminum Composite Panel Building</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://tenggua2.github.io/hendo-tech/images/panel-detail.png</image:loc>
-      <image:title>A2 Panel Detail - Zero Water Absorption Core</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tenggua2.github.io/hendo-tech/images/panel-color.jpg</image:loc>
-      <image:title>A2 Panel Color Range</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://tenggua2.github.io/hendo-tech/images/factory.jpg</image:loc>
       <image:title>Hengdu Factory - A2 Panel Production Line</image:title>
     </image:image>
   </url>
   <url>
+    <loc>https://tenggua2.github.io/hendo-tech/a2-fire-rated-panel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tenggua2.github.io/hendo-tech/acp-manufacturer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tenggua2.github.io/hendo-tech/non-combustible-cladding.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://tenggua2.github.io/hendo-tech/index-impact.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 </urlset>
