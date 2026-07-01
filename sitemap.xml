@@ -2,50 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://tenggua2.github.io/hendo-tech/</loc>
+    <loc>https://hendo-tech.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://tenggua2.github.io/hendo-tech/images/hero-building.jpg</image:loc>
+      <image:loc>https://hendo-tech.com/images/hero-building.jpg</image:loc>
       <image:title>A2 Non-Combustible Aluminum Composite Panel Building</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://tenggua2.github.io/hendo-tech/images/factory.jpg</image:loc>
+      <image:loc>https://hendo-tech.com/images/factory.jpg</image:loc>
       <image:title>Hengdu Factory - A2 Panel Production Line</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://tenggua2.github.io/hendo-tech/a2-fire-rated-panel.html</loc>
+    <loc>https://hendo-tech.com/a2-fire-rated-panel.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenggua2.github.io/hendo-tech/acp-manufacturer.html</loc>
+    <loc>https://hendo-tech.com/acp-manufacturer.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenggua2.github.io/hendo-tech/non-combustible-cladding.html</loc>
+    <loc>https://hendo-tech.com/non-combustible-cladding.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenggua2.github.io/hendo-tech/a2-fire-rated-manufacturer.html</loc>
+    <loc>https://hendo-tech.com/a2-fire-rated-manufacturer.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenggua2.github.io/hendo-tech/non-combustible-aluminum-cladding.html</loc>
+    <loc>https://hendo-tech.com/non-combustible-aluminum-cladding.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenggua2.github.io/hendo-tech/zero-water-absorption.html</loc>
+    <loc>https://hendo-tech.com/zero-water-absorption.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenggua2.github.io/hendo-tech/index-impact.html</loc>
+    <loc>https://hendo-tech.com/index-impact.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
