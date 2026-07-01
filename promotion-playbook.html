@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>恒度科技 A2铝塑板 — 全平台推广执行手册</title>
+<style>
+:root {
+  --gold: #c8a45c;
+  --gold-light: #e0bc7a;
+  --fire: #FF3B1D;
+  --bg: #0d0d0f;
+  --surface: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --text: #e0e0e0;
+  --dim: #888;
+  --green: #4ade80;
+  --blue: #60a5fa;
+  --red: #f87171;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.8;
+}
+body::before {
+  content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(200,164,92,0.05) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+.container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; position: relative; z-index: 1; }
+
+/* Header */
+.header { text-align: center; padding: 60px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+.header .badge { display: inline-block; border: 1px solid rgba(200,164,92,0.4); color: var(--gold); padding: 6px 20px; border-radius: 100px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.header h1 { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 12px; letter-spacing: -0.5px; }
+.header h1 em { font-style: normal; color: var(--gold); }
+.header p { color: var(--dim); font-size: 15px; max-width: 600px; margin: 0 auto; }
+
+/* Section */
+.section { margin-bottom: 56px; }
+.section-title { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.section-title .num { background: var(--gold); color: #0d0d0f; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.section-desc { color: var(--dim); font-size: 14px; margin-bottom: 24px; margin-left: 42px; }
+
+/* Keyword Matrix Table */
+.kw-table { width: 100%; border-collapse: collapse; font-size: 13px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.kw-table th { background: rgba(200,164,92,0.1); color: var(--gold); padding: 12px 14px; text-align: left; font-weight: 700; white-space: nowrap; }
+.kw-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: #ccc; }
+.kw-table tr:last-child td { border-bottom: none; }
+.kw-table .kw { color: #fff; font-weight: 600; }
+.kw-table .vol { color: var(--green); }
+.kw-table .comp { color: var(--blue); }
+
+/* Platform Cards */
+.platform-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.platform-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.3s; }
+.platform-card:hover { border-color: rgba(200,164,92,0.3); }
+.platform-card .p-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.platform-card .p-name { font-size: 16px; font-weight: 700; color: #fff; }
+.platform-card .p-type { font-size: 11px; padding: 3px 10px; border-radius: 4px; font-weight: 600; }
+.p-type.b2b { background: rgba(96,165,250,0.15); color: var(--blue); }
+.p-type.social { background: rgba(74,222,128,0.15); color: var(--green); }
+.p-type.search { background: rgba(248,113,113,0.15); color: var(--red); }
+.p-type.directory { background: rgba(200,164,92,0.15); color: var(--gold); }
+.p-type.video { background: rgba(192,132,252,0.15); color: #c084fc; }
+.platform-card .p-audience { font-size: 12px; color: var(--dim); margin-bottom: 10px; }
+.platform-card .p-action { font-size: 13px; color: #ccc; line-height: 1.7; }
+.platform-card .p-action strong { color: var(--gold); }
+.platform-card .p-priority { margin-top: 12px; display: flex; align-items: center; gap: 6px; font-size: 12px; }
+.priority-dot { width: 8px; height: 8px; border-radius: 50%; }
+.priority-dot.high { background: var(--fire); }
+.priority-dot.med { background: var(--gold); }
+.priority-dot.low { background: var(--dim); }
+
+/* Copy Block */
+.copy-block { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+.copy-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border); cursor: pointer; }
+.copy-header .label { font-size: 14px; font-weight: 700; color: #fff; }
+.copy-header .platform-tag { font-size: 11px; color: var(--gold); }
+.copy-body { padding: 16px 20px; font-size: 13px; color: #bbb; white-space: pre-wrap; line-height: 1.8; }
+.copy-body .highlight { color: var(--gold); font-weight: 600; }
+
+/* Checklist */
+.checklist { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.check-item { display: flex; align-items: flex-start; gap: 10px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; color: #ccc; }
+.check-item .box { width: 18px; height: 18px; border: 2px solid var(--gold); border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; margin-bottom: 24px; }
+.timeline-item::before { content: ''; position: absolute; left: -28px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--gold); border: 3px solid var(--bg); }
+.timeline-item .t-phase { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.timeline-item .t-time { font-size: 11px; color: var(--dim); margin-bottom: 8px; }
+.timeline-item .t-content { font-size: 13px; color: #ccc; }
+.timeline-item .t-content li { margin-left: 16px; margin-bottom: 4px; }
+
+/* Alert */
+.alert { background: rgba(200,164,92,0.08); border: 1px solid rgba(200,164,92,0.2); border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: var(--gold-light); }
+.alert strong { color: var(--gold); }
+.alert.warning { background: rgba(248,113,113,0.08); border-color: rgba(248,113,113,0.2); color: var(--red); }
+.alert.warning strong { color: var(--red); }
+
+/* Stats row */
+.stats-row { display: flex; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.stat-box { flex: 1; min-width: 140px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+.stat-box .s-num { font-size: 28px; font-weight: 900; color: var(--gold); }
+.stat-box .s-label { font-size: 12px; color: var(--dim); margin-top: 4px; }
+
+/* Footer */
+.footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); margin-top: 48px; color: var(--dim); font-size: 13px; }
+.footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <div class="badge">Multi-Platform Promotion Playbook</div>
+  <h1>A2铝塑板 <em>全平台推广</em> 执行手册</h1>
+  <p>覆盖 SEO + B2B平台 + 社交媒体 + 搜索引擎营销 + 行业目录 + 视频营销 — 含关键词矩阵、各平台文案模板、执行时间表</p>
+  <div class="stats-row" style="margin-top: 32px; justify-content: center;">
+    <div class="stat-box"><div class="s-num">15+</div><div class="s-label">推广平台</div></div>
+    <div class="stat-box"><div class="s-num">50+</div><div class="s-label">关键词矩阵</div></div>
+    <div class="stat-box"><div class="s-num">12</div><div class="s-label">文案模板</div></div>
+    <div class="stat-box"><div class="s-num">4</div><div class="s-label">执行阶段</div></div>
+  </div>
+</div>
+
+<!-- Section 1: Keyword Matrix -->
+<div class="section">
+  <div class="section-title"><span class="num">1</span> 关键词矩阵</div>
+  <div class="section-desc">按搜索量、竞争度、商业意图分层，覆盖中英文双语市场</div>
+
+  <table class="kw-table">
+    <thead>
+      <tr>
+        <th>关键词</th>
+        <th>语言</th>
+        <th>月搜索量(估)</th>
+        <th>竞争度</th>
+        <th>意图</th>
+        <th>适用平台</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="kw">aluminium composite panel</td><td>EN</td><td class="vol">22,000</td><td class="comp">高</td><td>采购/信息</td><td>Google, LinkedIn, B2B</td></tr>
+      <tr><td class="kw">ACP panel manufacturer</td><td>EN</td><td class="vol">8,100</td><td class="comp">中</td><td>采购</td><td>Google Ads, Alibaba</td></tr>
+      <tr><td class="kw">A2 fire rated composite panel</td><td>EN</td><td class="vol">3,600</td><td class="comp">低</td><td>精准采购</td><td>Google, LinkedIn</td></tr>
+      <tr><td class="kw">non-combustible cladding panel</td><td>EN</td><td class="vol">2,900</td><td class="comp">低</td><td>精准采购</td><td>Google, 行业目录</td></tr>
+      <tr><td class="kw">fireproof aluminum panel</td><td>EN</td><td class="vol">1,900</td><td class="comp">低</td><td>精准采购</td><td>Google, YouTube</td></tr>
+      <tr><td class="kw">A2 ACP panel</td><td>EN</td><td class="vol">1,300</td><td class="comp">低</td><td>精准采购</td><td>Google, B2B</td></tr>
+      <tr><td class="kw">zero water absorption panel</td><td>EN</td><td class="vol">320</td><td class="comp">极低</td><td>品牌/技术</td><td>LinkedIn, 行业论坛</td></tr>
+      <tr><td class="kw">screw extruded A2 core</td><td>EN</td><td class="vol">170</td><td class="comp">极低</td><td>技术/品牌</td><td>LinkedIn, 技术论坛</td></tr>
+      <tr><td class="kw">aluminum composite panel factory</td><td>EN</td><td class="vol">4,400</td><td class="comp">中</td><td>采购</td><td>Google, Alibaba, MIC</td></tr>
+      <tr><td class="kw">metal composite panel supplier</td><td>EN</td><td class="vol">2,700</td><td class="comp">中</td><td>采购</td><td>Google, Global Sources</td></tr>
+      <tr><td class="kw">铝塑板</td><td>ZH</td><td class="vol">49,500</td><td class="comp">高</td><td>采购/信息</td><td>百度, 1688, 抖音</td></tr>
+      <tr><td class="kw">铝塑板厂家</td><td>ZH</td><td class="vol">12,100</td><td class="comp">高</td><td>采购</td><td>百度SEM, 1688</td></tr>
+      <tr><td class="kw">A2级铝塑板</td><td>ZH</td><td class="vol">3,500</td><td class="comp">中</td><td>精准采购</td><td>百度, 知乎, 小红书</td></tr>
+      <tr><td class="kw">防火铝塑板</td><td>ZH</td><td class="vol">2,800</td><td class="comp">中</td><td>采购</td><td>百度, 1688</td></tr>
+      <tr><td class="kw">不燃铝塑复合板</td><td>ZH</td><td class="vol">880</td><td class="comp">低</td><td>精准采购</td><td>百度, 行业网站</td></tr>
+      <tr><td class="kw">金属复合板</td><td>ZH</td><td class="vol">6,600</td><td class="comp">中</td><td>采购/信息</td><td>百度, 1688</td></tr>
+      <tr><td class="kw">零吸水铝塑板</td><td>ZH</td><td class="vol">150</td><td class="comp">极低</td><td>品牌/技术</td><td>知乎, 小红书, 公众号</td></tr>
+      <tr><td class="kw">螺杆挤出A2芯材</td><td>ZH</td><td class="vol">80</td><td class="comp">极低</td><td>技术/品牌</td><td>知乎, 行业论坛</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert">
+    <strong>策略提示：</strong>优先攻克"低搜索量 + 低竞争 + 高商业意图"的长尾关键词（如 A2 fire rated, zero water absorption, 不燃铝塑复合板），这些词转化率远高于泛流量词。高搜索量的泛词通过 Google Ads / 百度SEM 付费获取，不必死磕自然排名。
+  </div>
+</div>
+
+<!-- Section 2: Platform Matrix -->
+<div class="section">
+  <div class="section-title"><span class="num">2</span> 全平台矩阵一览</div>
+  <div class="section-desc">按优先级排序，标注平台类型、目标受众和核心动作</div>
+
+  <div class="platform-grid">
+
+    <!-- Alibaba -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">Alibaba.com (国际站)</span>
+        <span class="p-type b2b">B2B</span>
+      </div>
+      <div class="p-audience">全球采购商、进口商、建材批发商</div>
+      <div class="p-action">
+        <strong>动作：</strong>开设金品诚企店铺，发布3款产品（A2板材/颗粒/芯卷），每个产品放8张图+1个视频<br>
+        <strong>关键词：</strong>aluminium composite panel, A2 fire rated ACP, ACP manufacturer China<br>
+        <strong>费用：</strong>金品诚企约 ¥29,800/年
+      </div>
+      <div class="p-priority"><span class="priority-dot high"></span> 优先级：高 — 海外B2B最大流量入口</div>
+    </div>
+
+    <!-- Made-in-China -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">Made-in-China.com</span>
+        <span class="p-type b2b">B2B</span>
+      </div>
+      <div class="p-audience">全球采购商，中东/东南亚/非洲占比高</div>
+      <div class="p-action">
+        <strong>动作：</strong>开通高级会员，发布产品+工厂视频认证<br>
+        <strong>关键词：</strong>aluminum composite panel, fireproof panel, ACP supplier<br>
+        <strong>费用：</strong>高级会员约 ¥12,000-25,000/年
+      </div>
+      <div class="p-priority"><span class="priority-dot high"></span> 优先级：高</div>
+    </div>
+
+    <!-- 1688 -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">1688.com (国内B2B)</span>
+        <span class="p-type b2b">B2B</span>
+      </div>
+      <div class="p-audience">国内建材经销商、装饰公司、幕墙施工方</div>
+      <div class="p-action">
+        <strong>动作：</strong>开通实力商家，上架A2成品板材，标题覆盖"铝塑板厂家/A2级防火/零吸水"<br>
+        <strong>费用：</strong>实力商家 ¥3,688/年
+      </div>
+      <div class="p-priority"><span class="priority-dot high"></span> 优先级：高 — 国内B2B第一入口</div>
+    </div>
+
+    <!-- Global Sources -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">Global Sources</span>
+        <span class="p-type b2b">B2B</span>
+      </div>
+      <div class="p-audience">欧美高端采购商、品牌商</div>
+      <div class="p-action">
+        <strong>动作：</strong>注册供应商账号，参加线上建材展<br>
+        <strong>关键词：</strong>fire rated ACP, non-combustible panel<br>
+        <strong>费用：</strong>约 ¥15,000-30,000/年
+      </div>
+      <div class="p-priority"><span class="priority-dot med"></span> 优先级：中</div>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">LinkedIn</span>
+        <span class="p-type social">社交</span>
+      </div>
+      <div class="p-audience">海外建筑/建材行业决策者、幕墙顾问、architect</div>
+      <div class="p-action">
+        <strong>动作：</strong>建公司主页+产品展示页，每周2篇技术帖，加入 facade/cladding 行业群组<br>
+        <strong>内容：</strong>A2防火技术科普、项目案例、认证解读、行业法规分析<br>
+        <strong>费用：</strong>免费（付费推广可选）
+      </div>
+      <div class="p-priority"><span class="priority-dot high"></span> 优先级：高 — 海外B2B社交第一平台</div>
+    </div>
+
+    <!-- YouTube -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">YouTube</span>
+        <span class="p-type video">视频</span>
+      </div>
+      <div class="p-audience">全球建材采购商、建筑师、施工方</div>
+      <div class="p-action">
+        <strong>动作：</strong>建频道，发5个核心视频：①工厂全景 ②A2防火测试 ③零吸水对比实验 ④产品规格讲解 ⑤施工安装演示<br>
+        <strong>关键词：</strong>A2 aluminum composite panel, fire rated ACP test, ACP installation<br>
+        <strong>费用：</strong>免费（拍摄成本除外）
+      </div>
+      <div class="p-priority"><span class="priority-dot high"></span> 优先级：高 — 视频是建材采购决策关键</div>
+    </div>
+
+    <!-- Google Ads -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">Google Ads</span>
+        <span class="p-type search">搜索</span>
+      </div>
+      <div class="p-audience">主动搜索 ACP/铝塑板 的海外采购商</div>
+      <div class="p-action">
+        <strong>动作：</strong>投放 Search Ads，精准关键词匹配，落地页为官网产品页<br>
+        <strong>关键词：</strong>"A2 fire rated ACP", "aluminum composite panel manufacturer", "non-combustible cladding"<br>
+        <strong>预算：</strong>$10-20/天起步，按转化优化
+      </div>
+      <div class="p-priority"><span class="priority-dot high"></span> 优先级：高 — 精准获客最快方式</div>
+    </div>
+
+    <!-- Baidu SEM -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">百度推广 (SEM)</span>
+        <span class="p-type search">搜索</span>
+      </div>
+      <div class="p-audience">国内搜索铝塑板/防火板的采购商</div>
+      <div class="p-action">
+        <strong>动作：</strong>开百度推广账户，投"铝塑板厂家/A2级铝塑板/防火铝塑板"<br>
+        <strong>预算：</strong>¥100-200/天，按地域投（华东/华南/华北）<br>
+        <strong>落地页：</strong>需建中文版产品落地页
+      </div>
+      <div class="p-priority"><span class="priority-dot med"></span> 优先级：中 — 取决于国内市场策略</div>
+    </div>
+
+    <!-- Facebook -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">Facebook + Instagram</span>
+        <span class="p-type social">社交</span>
+      </div>
+      <div class="p-audience">东南亚/中东/南美建材市场，小型采购商</div>
+      <div class="p-action">
+        <strong>动作：</strong>建公司Page，发产品图+项目案例，加入 construction materials 群组<br>
+        <strong>内容：</strong>产品图册、认证展示、客户评价、工厂实拍<br>
+        <strong>费用：</strong>免费（Boost帖子可选 $5-10/条）
+      </div>
+      <div class="p-priority"><span class="priority-dot med"></span> 优先级：中</div>
+    </div>
+
+    <!-- 抖音 -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">抖音 / TikTok</span>
+        <span class="p-type video">视频</span>
+      </div>
+      <div class="p-audience">国内(TikTok: 海外)建材行业从业者</div>
+      <div class="p-action">
+        <strong>动作：</strong>抖音企业号发工厂实拍/防火测试/施工过程；TikTok面向东南亚/中东<br>
+        <strong>内容：</strong>15-30秒短视频，火烧测试对比、水浸泡实验、工厂产线<br>
+        <strong>费用：</strong>免费
+      </div>
+      <div class="p-priority"><span class="priority-dot med"></span> 优先级：中 — 品牌曝光</div>
+    </div>
+
+    <!-- 知乎 -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">知乎</span>
+        <span class="p-type social">社交</span>
+      </div>
+      <div class="p-audience">建筑设计师、幕墙工程师、建材采购决策者</div>
+      <div class="p-action">
+        <strong>动作：</strong>写3-5篇技术深度文章，回答"A2级铝塑板和普通铝塑板区别"等问题<br>
+        <strong>内容：</strong>A2防火等级解读、零吸水技术原理、铝塑板选购指南、项目案例分析<br>
+        <strong>费用：</strong>免费
+      </div>
+      <div class="p-priority"><span class="priority-dot med"></span> 优先级：中 — 建立技术权威</div>
+    </div>
+
+    <!-- 小红书 -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">小红书</span>
+        <span class="p-type social">社交</span>
+      </div>
+      <div class="p-audience">室内设计师、装修业主（2B2C兼顾）</div>
+      <div class="p-action">
+        <strong>动作：</strong>发产品美图+防火知识科普笔记<br>
+        <strong>内容：</strong>"装修选铝塑板为什么要选A2级"、"零吸水铝塑板是什么黑科技"<br>
+        <strong>费用：</strong>免费
+      </div>
+      <div class="p-priority"><span class="priority-dot low"></span> 优先级：低 — 偏C端</div>
+    </div>
+
+    <!-- Google Business -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">Google Business Profile</span>
+        <span class="p-type directory">目录</span>
+      </div>
+      <div class="p-audience">Google搜索+Google Maps</div>
+      <div class="p-action">
+        <strong>动作：</strong>注册企业资料，填工厂地址+产品类别+营业信息<br>
+        <strong>效果：</strong>搜索公司名时展示完整企业信息卡<br>
+        <strong>费用：</strong>免费
+      </div>
+      <div class="p-priority"><span class="priority-dot med"></span> 优先级：中</div>
+    </div>
+
+    <!-- 行业目录 -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">行业目录网站</span>
+        <span class="p-type directory">目录</span>
+      </div>
+      <div class="p-audience">主动找供应商的采购商</div>
+      <div class="p-action">
+        <strong>动作：</strong>注册并提交企业信息到以下目录：<br>
+        • ArchDaily Products (archdaily.com/catalog)<br>
+        • BuildingGreen (buildinggreen.com)<br>
+        • Construction21 (construction21.org)<br>
+        • 中国建材网 (cnbm.com.cn)<br>
+        • 中国幕墙网 (alwindoor.com)<br>
+        • 中国铝业网 (cnal.com)
+      </div>
+      <div class="p-priority"><span class="priority-dot low"></span> 优先级：低 — 但SEO外链价值高</div>
+    </div>
+
+    <!-- 微信公众号 -->
+    <div class="platform-card">
+      <div class="p-header">
+        <span class="p-name">微信公众号</span>
+        <span class="p-type social">社交</span>
+      </div>
+      <div class="p-audience">国内建材行业人脉圈</div>
+      <div class="p-action">
+        <strong>动作：</strong>注册企业公众号，每月4篇行业文章<br>
+        <strong>内容：</strong>防火法规解读、项目案例、技术科普、公司动态<br>
+        <strong>费用：</strong>认证 ¥300/年
+      </div>
+      <div class="p-priority"><span class="priority-dot low"></span> 优先级：低 — 长期品牌建设</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Section 3: Platform Copy Templates -->
+<div class="section">
+  <div class="section-title"><span class="num">3</span> 各平台推广文案模板</div>
+  <div class="section-desc">可直接复制使用，根据平台特点定制</div>
+
+  <!-- Alibaba -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">Alibaba 产品标题 + 描述</span>
+      <span class="platform-tag">Alibaba.com</span>
+    </div>
+    <div class="copy-body"><span class="highlight">产品标题（≤128字符）：</span>
+A2 Fire Rated Aluminium Composite Panel Zero Water Absorption EN13501-1 Certified Manufacturer China
+
+<span class="highlight">产品卖点（Key Features）：</span>
+• World's ONLY screw-extruded A2 core — zero water absorption (<0.1%)
+• Fire rating: A2-s1,d0 (EN 13501-1) / A2 (GB 8624) / Class 0 (BS 476) / Class A (ASTM E84)
+• Peel strength: ≥120 N/mm — no delamination, no warping
+• Thickness: 2-6mm | Aluminum skin: 0.2-0.5mm | Max width: 2,000mm
+• Daily capacity: 5,000 sqm — fast delivery for large projects
+• 6 international certifications: SGS, Intertek/UL, TUV, BV
+• 100% recyclable, eco-friendly mineral core
+
+<span class="highlight">产品描述开头：</span>
+Looking for A2 fire-rated ACP that won't delaminate or absorb moisture? Hengdu Technology produces the world's first screw-extruded A2 non-combustible aluminum composite panel. Our unique extrusion process creates a core with zero water absorption — meaning no warping, no bubbles, no callbacks on your projects.
+
+<span class="highlight">FAQ关键词优化（隐藏在产品描述底部）：</span>
+[Related searches: A2 aluminium composite panel, fireproof ACP panel, non-combustible cladding material, A2 grade ACP, zero water absorption panel, screw extruded core panel, fire rated metal composite panel, China ACP manufacturer, aluminium composite panel factory]</div>
+  </div>
+
+  <!-- LinkedIn -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">LinkedIn 技术帖 (英文)</span>
+      <span class="platform-tag">LinkedIn</span>
+    </div>
+    <div class="copy-body">Most A2 panels absorb moisture. Here's why that matters — and how we fixed it.
+
+After 3 years of R&D, our team at Hengdu Technology has developed the world's first screw-extruded A2 non-combustible aluminum composite panel with <span class="highlight">zero water absorption (<0.1%)</span>.
+
+Why does this matter for your projects?
+→ No delamination in high-humidity environments
+→ No warping or bubbling over time
+→ No costly callbacks or replacements
+→ Full compliance with EN 13501-1 A2-s1,d0
+
+Technical specs:
+▪ Fire: A2-s1,d0 (EN 13501-1) / A2 (GB 8624) / Class 0 (BS 476)
+▪ Water absorption: < 0.1%
+▪ Peel strength: ≥ 120 N/mm
+▪ Max width: 2,000mm
+▪ Daily capacity: 5,000 sqm
+▪ Certifications: SGS, Intertek, TUV, BV
+
+We supply complete A2 panels for cladding projects worldwide. Samples available on request.
+
+#AluminumCompositePanel #FireRatedCladding #ACP #BuildingMaterials #FacadeEngineering #FireSafety #ConstructionMaterials</div>
+  </div>
+
+  <!-- LinkedIn 中文 -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">LinkedIn 技术帖 (中文)</span>
+      <span class="platform-tag">LinkedIn</span>
+    </div>
+    <div class="copy-body">绝大多数A2铝塑板都会吸水。这是一个被行业忽视的大问题——而我们解决了它。
+
+恒度科技历时3年研发，全球首创<span class="highlight">螺杆挤出工艺A2不燃芯材</span>，实现零吸水（<0.1%）。
+
+这意味着什么？
+→ 高湿环境不脱层
+→ 不翘曲、不起泡
+→ 不需要售后返工
+→ 完全满足 EN 13501-1 A2-s1,d0 / GB 8624 A2级
+
+技术参数：
+▪ 防火等级：A2-s1,d0 (EN 13501-1) / A2 (GB 8624) / Class 0 (BS 476)
+▪ 吸水率：< 0.1%（接近零）
+▪ 剥离强度：≥ 120 N/mm
+▪ 最大幅宽：2,000mm
+▪ 日产能：5,000㎡板材
+▪ 认证：SGS、Intertek、TUV、BV
+
+面向全球供应A2成品板材。如需样品或详细规格，欢迎私信联系。
+
+#铝塑板 #A2防火 #金属复合板 #建筑材料 #幕墙材料 #防火安全</div>
+  </div>
+
+  <!-- 1688 -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">1688 产品标题 + 详情</span>
+      <span class="platform-tag">1688.com</span>
+    </div>
+    <div class="copy-body"><span class="highlight">产品标题（覆盖核心搜索词）：</span>
+厂家直销 A2级防火铝塑板 零吸水不燃金属复合板 5,000㎡/日幕墙专用
+
+<span class="highlight">副标题：</span>
+全球首创螺杆挤出A2芯材 | 零吸水不脱层 | EN13501-1/GB8624/BS476全认证
+
+<span class="highlight">详情页核心卖点：</span>
+【为什么选我们的A2铝塑板？】
+
+❶ 零吸水 — 全球首创螺杆挤出芯材，吸水率<0.1%
+  普通A2板用粉体填充，吸水率高，时间久了会脱层、翘曲
+  我们的挤出工艺让芯材致密无孔隙，真正做到零吸水
+
+❷ 真A2级 — 6项国际认证，不是口头承诺
+  EN 13501-1 A2-s1,d0（欧盟）
+  GB 8624 A2级（国标）
+  BS 476 Class 0（英国）
+  ASTM E84 Class A（美国）
+  SGS + Intertek + TUV + BV 第三方检测报告
+
+❸ 大产能 — 日产5,000㎡，大项目不拖延
+  8条颗粒线（200吨/天）+ 1条芯卷线（50吨/天）+ 板材线
+  常规颜色7天发货，定制颜色15天发货
+
+❹ 高强度 — 剥离强度≥120N/mm
+  铝皮和芯材一体挤出结合，不分层
+  可加工：折弯、开槽、冲孔，加工性能优于普通A2板
+
+<span class="highlight">规格参数：</span>
+厚度：2-6mm | 铝皮：0.2-0.5mm | 幅宽：≤2,000mm | 板长：≤6,000mm</div>
+  </div>
+
+  <!-- YouTube -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">YouTube 视频标题 + 描述</span>
+      <span class="platform-tag">YouTube</span>
+    </div>
+    <div class="copy-body"><span class="highlight">视频1标题：</span>
+A2 Fire Rated Aluminum Composite Panel — Zero Water Absorption Test (You Won't Believe This)
+
+<span class="highlight">视频1描述：</span>
+Watch what happens when you submerge our A2 panel in water vs. a regular A2 panel.
+
+Our screw-extruded A2 core has ZERO water absorption (<0.1%). No other manufacturer can do this.
+
+In this video:
+00:00 - Water absorption comparison test
+01:30 - Fire resistance demonstration (A2-s1,d0)
+03:00 - Peel strength test (≥120 N/mm)
+04:15 - Factory tour: see the extrusion line
+05:30 - How to order / request samples
+
+Fire rated: EN 13501-1 A2-s1,d0 | GB 8624 A2 | BS 476 Class 0 | ASTM E84 Class A
+Daily capacity: 5,000 sqm
+Contact: tenggua2@163.com | +86 158 0081 2660
+
+#AluminumCompositePanel #ACP #FireRatedPanel #BuildingMaterials #Construction #FireSafety #PanelManufacturer
+
+<span class="highlight">视频2标题：</span>
+Inside the World's Only Screw-Extruded A2 Panel Factory — Full Production Line Tour
+
+<span class="highlight">视频3标题：</span>
+A2 vs B1 vs Ordinary ACP: Fire Test Comparison — Which Panel Survives?
+
+<span class="highlight">视频4标题：</span>
+How to Install A2 Aluminum Composite Panel — Step by Step Guide
+
+<span class="highlight">视频5标题：</span>
+6 Certifications That Matter for Fire-Rated ACP — And Why Most Panels Don't Have Them</div>
+  </div>
+
+  <!-- Facebook -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">Facebook / Instagram 帖子</span>
+      <span class="platform-tag">Facebook</span>
+    </div>
+    <div class="copy-body"><span class="highlight">帖子1（产品介绍）：</span>
+🔥 NOT all A2 panels are the same.
+
+Most A2 aluminum composite panels absorb water → delamination → warping → costly callbacks.
+
+We fixed it. Our screw-extruded A2 panel has ZERO water absorption (<0.1%).
+
+✅ Fire rated: A2-s1,d0 (EN 13501-1)
+✅ 6 international certifications
+✅ Daily capacity: 5,000 sqm
+✅ Direct from China factory
+
+DM for catalog & pricing. Samples available! 📩
+
+<span class="highlight">帖子2（项目案例）：</span>
+Another project completed with our A2 fire-rated panels! 🏢
+
+This commercial building needed cladding that meets strict fire codes AND performs in high-humidity conditions.
+
+Our panels delivered:
+→ Zero water absorption = zero warping
+→ A2-s1,d0 fire rating = full compliance
+→ 2,000mm max width = faster installation
+
+Available worldwide. Contact us for your next project.
+
+<span class="highlight">Instagram标签组：</span>
+#aluminumcompositepanel #ACPpanel #firerated #A2panel #buildingmaterials #cladding #facade #construction #architecturalpanels #fireproof #compositepanel #aluminumpanel #buildingenvelope #wallcladding</div>
+  </div>
+
+  <!-- 抖音 -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">抖音 / TikTok 短视频脚本</span>
+      <span class="platform-tag">抖音/TikTok</span>
+    </div>
+    <div class="copy-body"><span class="highlight">视频1：火烧测试对比（15秒）</span>
+画面：左边普通铝塑板，右边A2铝塑板，同时用喷枪烧
+字幕：普通铝塑板 vs A2级铝塑板，火烧30秒
+结果：普通板迅速燃烧冒黑烟，A2板不燃不冒烟
+结尾文字：恒度A2铝塑板 | 零吸水·真防火
+
+<span class="highlight">视频2：水浸泡实验（20秒）</span>
+画面：两块A2板称重后泡水24小时，取出再称重
+字幕：我们的A2板 vs 同行A2板，泡水24小时后
+结果：同行板吸水增重3.2%，我们的增重0.08%
+结尾文字：全球首创螺杆挤出·零吸水A2芯材
+
+<span class="highlight">视频3：工厂产线实拍（30秒）</span>
+画面：从颗粒→挤出→复合→裁切→堆码 全流程
+配字：日产5,000㎡ A2铝塑板是怎样炼成的
+背景音乐：节奏感强的BGM
+结尾文字：恒度科技 | 8条产线 | 全球直供
+
+<span class="highlight">TikTok标题标签：</span>
+A2 panel fire test 🔥 vs regular ACP #aluminumcompositepanel #ACP #firerated #buildingmaterials #construction #Chinafactory</div>
+  </div>
+
+  <!-- 知乎 -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">知乎文章标题 + 大纲</span>
+      <span class="platform-tag">知乎</span>
+    </div>
+    <div class="copy-body"><span class="highlight">文章1标题：</span>
+为什么90%的A2铝塑板都会"吸水脱层"？深度解析A2芯材工艺差异
+
+<span class="highlight">大纲：</span>
+一、先说结论：A2铝塑板"吸水"是个行业普遍问题
+二、A2芯材的3种工艺：粉体填充 vs 湿法涂布 vs 螺杆挤出
+三、为什么粉体填充必然吸水？（微观结构分析）
+四、螺杆挤出工艺为什么能做到零吸水？（技术原理解读）
+五、实测数据对比：3种工艺A2板的吸水率/剥离强度/耐候性
+六、采购建议：如何辨别"真零吸水"A2板
+
+<span class="highlight">文章2标题：</span>
+铝塑板选购终极指南：A2/B1/普通级到底怎么选？附防火测试视频
+
+<span class="highlight">文章3标题：</span>
+做幕墙项目，这6个认证没有就别用——A2铝塑板认证全解读
+
+<span class="highlight">知乎回答引流策略：</span>
+搜索以下问题并专业回答（附产品案例自然植入）：
+• "A2级铝塑板和普通铝塑板有什么区别？"
+• "铝塑板防火等级怎么分？"
+• "幕墙用铝塑板选什么等级好？"
+• "铝塑板为什么会起泡脱层？"
+• "A2芯材是什么材料？"</div>
+  </div>
+
+  <!-- Google Ads -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">Google Ads 广告文案</span>
+      <span class="platform-tag">Google Ads</span>
+    </div>
+    <div class="copy-body"><span class="highlight">广告组1：A2 Fire Rated（精准采购词）</span>
+
+关键词：a2 fire rated acp, a2 aluminium composite panel, non-combustible panel, fireproof acp
+
+Headline 1: A2 Fire-Rated ACP Panel
+Headline 2: Zero Water Absorption
+Headline 3: EN 13501-1 Certified
+Description 1: World's only screw-extruded A2 core. Zero water absorption, no delamination. 6 international certifications.
+Description 2: Direct manufacturer in China. Daily capacity 5,000 sqm. Samples available. Contact us today.
+Display URL: hendo-tech.com/a2-panel
+Final URL: https://tenggua2.github.io/hendo-tech/
+
+<span class="highlight">广告组2：ACP Manufacturer（采购词）</span>
+
+关键词：aluminium composite panel manufacturer, acp factory china, acp supplier
+
+Headline 1: ACP Manufacturer China
+Headline 2: 5,000 sqm Daily Output
+Headline 3: Direct Factory Pricing
+Description 1: A2 fire-rated aluminum composite panels direct from factory. Zero water absorption technology.
+Description 2: SGS, Intertek, TUV certified. Fast worldwide shipping. Request your free sample today.
+
+<span class="highlight">预算建议：</span>
+• 广告组1（精准词）：$8-12/天，CPC约$1.5-3，预计3-5点击/天
+• 广告组2（宽泛词）：$5-8/天，CPC约$0.8-1.5，预计5-8点击/天
+• 总预算：$13-20/天 → 月预算 $400-600
+• 投放地域：全球，重点英国/中东/东南亚/南美
+• 投放时间：目标市场工作时间（非24小时）</div>
+  </div>
+
+  <!-- 百度推广 -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">百度推广 (SEM) 广告文案</span>
+      <span class="platform-tag">百度推广</span>
+    </div>
+    <div class="copy-body"><span class="highlight">推广单元1：A2级铝塑板（精准词）</span>
+
+关键词：A2级铝塑板, A2防火铝塑板, 不燃铝塑板, A2铝塑复合板
+
+标题：A2级防火铝塑板_零吸水不脱层_6项国际认证
+描述1：全球首创螺杆挤出A2芯材，吸水率<0.1%，不脱层不翘曲。EN13501-1/GB8624全认证，日产5000㎡。
+描述2：恒度科技A2铝塑板，真A2级，真零吸水。厂家直供，免费寄样。点击了解详情→
+显示URL：hengdu-a2.com
+落地URL：（需建中文产品落地页）
+
+<span class="highlight">推广单元2：铝塑板厂家（采购词）</span>
+
+关键词：铝塑板厂家, 铝塑板生产厂家, 铝塑复合板厂家, 金属复合板厂家
+
+标题：铝塑板厂家直销_A2级防火_日产5000㎡
+描述1：专业A2铝塑板生产厂家，8条产线日产能200吨。零吸水螺杆挤出芯材，6项国际认证。
+描述2：幕墙专用A2铝塑板，厂家直供无中间商。常规色7天发货，免费寄样。
+
+<span class="highlight">预算建议：</span>
+• 单元1（精准词）：¥60-100/天，CPC约¥3-8
+• 单元2（采购词）：¥40-80/天，CPC约¥2-5
+• 总预算：¥100-180/天 → 月预算 ¥3,000-5,400
+• 投放地域：全国，重点华东/华南/华北
+• 匹配方式：短语匹配（避免宽匹配浪费预算）</div>
+  </div>
+
+  <!-- B2B 产品发布模板 -->
+  <div class="copy-block">
+    <div class="copy-header">
+      <span class="label">B2B平台产品发布检查清单</span>
+      <span class="platform-tag">通用模板</span>
+    </div>
+    <div class="copy-body"><span class="highlight">每个B2B平台发布产品时，确保以下要素齐全：</span>
+
+□ 产品标题：含2-3个核心关键词，≤128字符
+□ 产品主图：白底+产品实物，≥800×800px，无水印
+□ 产品视频：30-60秒工厂实拍或产品演示
+□ 详情页图片：≥6张（产品全景/截面细节/颜色色卡/认证证书/工厂产线/项目案例）
+□ 产品参数表：完整填写厚度/幅宽/长度/铝皮厚度/芯材/防火等级/吸水率/剥离强度
+□ FAQ区：预设5-8个常见问题及回答
+□ 公司介绍：50-100字精简版，含产能/认证/出口经验
+□ 联系方式：邮箱+电话+WhatsApp/微信
+□ 关键词标签：10-15个相关关键词
+□ 交易信息：MOQ / 交货期 / 付款方式 / 港口
+
+<span class="highlight">不同平台标题优化策略：</span>
+• Alibaba: "A2 Fire Rated Aluminium Composite Panel Zero Water Absorption EN13501-1 Certified"（关键词堆叠型）
+• Made-in-China: "Fireproof A2 Aluminum Composite Panel for Wall Cladding"（应用场景型）
+• 1688: "厂家直销 A2级防火铝塑板 零吸水不燃 日产5000㎡"（促销+参数型）
+• Global Sources: "A2-s1,d0 Non-Combustible Aluminum Composite Panel — Screw Extruded Core"（技术型）</div>
+  </div>
+
+</div>
+
+<!-- Section 4: SEO Technical Checklist -->
+<div class="section">
+  <div class="section-title"><span class="num">4</span> 网站 SEO 技术优化清单</div>
+  <div class="section-desc">已生成增强代码（seo-enhancement.html），以下为需执行的操作</div>
+
+  <div class="checklist">
+    <div class="check-item"><div class="box"></div><div>将 <strong>seo-enhancement.html</strong> 中的 meta 标签和结构化数据代码插入 index.html 的 &lt;head&gt; 中</div></div>
+    <div class="check-item"><div class="box"></div><div>将 <strong>robots.txt</strong> 和 <strong>sitemap.xml</strong> 上传到网站根目录</div></div>
+    <div class="check-item"><div class="box"></div><div>在 <strong>Google Search Console</strong> 提交网站和 sitemap</div></div>
+    <div class="check-item"><div class="box"></div><div>在 <strong>Bing Webmaster Tools</strong> 提交网站和 sitemap</div></div>
+    <div class="check-item"><div class="box"></div><div>在 <strong>百度站长平台</strong> 提交网站和 sitemap</div></div>
+    <div class="check-item"><div class="box"></div><div>注册 <strong>Google Business Profile</strong>（企业地址+产品类别）</div></div>
+    <div class="check-item"><div class="box"></div><div>给网站图片加 <strong>alt 属性</strong>（含关键词，如 "A2 aluminum composite panel factory"）</div></div>
+    <div class="check-item"><div class="box"></div><div>确保网站 <strong>移动端适配</strong>（Google 优先索引移动版）</div></div>
+    <div class="check-item"><div class="box"></div><div>页面加载速度优化（图片压缩、CSS/JS 内联）</div></div>
+    <div class="check-item"><div class="box"></div><div>在网站底部添加 <strong>公司地址、电话、邮箱</strong>（搜索引擎抓取 NAP 信息）</div></div>
+    <div class="check-item"><div class="box"></div><div>注册独立域名（如 hengdu-acp.com），从 GitHub Pages 迁移</div></div>
+    <div class="check-item"><div class="box"></div><div>建中文版产品落地页（百度推广/知乎/微信引流用）</div></div>
+  </div>
+
+  <div class="alert warning">
+    <strong>重要提醒：</strong>当前网站托管在 GitHub Pages（tenggua2.github.io/hendo-tech），子域名权重低，不利于SEO。强烈建议注册独立域名（如 hengdu-acp.com / hengdupanel.com），费用仅约 ¥60-100/年，但对搜索引擎收录和排名有质的提升。
+  </div>
+</div>
+
+<!-- Section 5: Execution Timeline -->
+<div class="section">
+  <div class="section-title"><span class="num">5</span> 执行时间表</div>
+  <div class="section-desc">分4个阶段，从基础建设到全面铺开</div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="t-phase">第一阶段：基础设施（第1-2周）</div>
+      <div class="t-time">⏱ 约14天</div>
+      <div class="t-content">
+        <ul>
+          <li>网站 SEO 增强：插入 meta 标签 + 结构化数据 + sitemap + robots.txt</li>
+          <li>注册独立域名并迁移网站</li>
+          <li>注册 Google Search Console / Bing Webmaster / 百度站长 并提交</li>
+          <li>注册 Google Business Profile</li>
+          <li>准备产品图片素材包（白底主图+场景图+认证图+工厂图，每类8张）</li>
+          <li>拍摄5个核心视频素材（工厂/防火测试/水浸实验/产品讲解/施工演示）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="t-phase">第二阶段：B2B平台铺设（第2-4周）</div>
+      <div class="t-time">⏱ 约14天</div>
+      <div class="t-content">
+        <ul>
+          <li>开通 Alibaba.com 金品诚企店铺，发布3款产品</li>
+          <li>开通 Made-in-China.com 高级会员，发布产品</li>
+          <li>开通 1688.com 实力商家，上架A2成品板材</li>
+          <li>注册 Global Sources 供应商账号</li>
+          <li>在6个行业目录网站提交企业信息</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="t-phase">第三阶段：社交媒体+视频铺设（第4-6周）</div>
+      <div class="t-time">⏱ 约14天</div>
+      <div class="t-content">
+        <ul>
+          <li>LinkedIn 公司主页上线 + 发3篇技术帖</li>
+          <li>YouTube 频道上线 + 发布5个核心视频</li>
+          <li>Facebook + Instagram 公司主页上线</li>
+          <li>抖音企业号 + TikTok 账号上线，发3条短视频</li>
+          <li>知乎发布2篇技术文章 + 回答5个相关问题</li>
+          <li>微信公众号注册认证 + 发首篇文章</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="t-phase">第四阶段：付费推广+持续运营（第6周起）</div>
+      <div class="t-time">⏱ 持续进行</div>
+      <div class="t-content">
+        <ul>
+          <li>Google Ads 上线：2个广告组，$15-20/天</li>
+          <li>百度推广上线：2个推广单元，¥100-180/天（如做国内市场）</li>
+          <li>LinkedIn 每周2帖 / YouTube 每月2个新视频</li>
+          <li>知乎每月2篇文章 / 抖音每周3条短视频</li>
+          <li>B2B平台产品信息每周更新（刷新排名）</li>
+          <li>每月分析各平台数据，优化关键词和文案</li>
+          <li>结合现有邮件营销系统，将平台来的询盘纳入 follow-up 流程</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 6: Budget Summary -->
+<div class="section">
+  <div class="section-title"><span class="num">6</span> 预算汇总</div>
+  <div class="section-desc">分为一次性投入和月度持续费用</div>
+
+  <table class="kw-table">
+    <thead>
+      <tr><th>项目</th><th>类型</th><th>费用(估)</th><th>备注</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="kw">独立域名注册</td><td>一次性</td><td>¥60-100/年</td><td>.com 域名</td></tr>
+      <tr><td class="kw">Alibaba.com 金品诚企</td><td>年费</td><td>¥29,800/年</td><td>海外B2B核心渠道</td></tr>
+      <tr><td class="kw">Made-in-China 高级会员</td><td>年费</td><td>¥12,000-25,000/年</td><td>按套餐选择</td></tr>
+      <tr><td class="kw">1688 实力商家</td><td>年费</td><td>¥3,688/年</td><td>国内B2B</td></tr>
+      <tr><td class="kw">Global Sources</td><td>年费</td><td>¥15,000-30,000/年</td><td>可选</td></tr>
+      <tr><td class="kw">Google Ads</td><td>月费</td><td>$400-600/月</td><td>按转化优化后可降</td></tr>
+      <tr><td class="kw">百度推广</td><td>月费</td><td>¥3,000-5,400/月</td><td>如做国内市场</td></tr>
+      <tr><td class="kw">视频拍摄制作</td><td>一次性</td><td>¥5,000-15,000</td><td>5个核心视频</td></tr>
+      <tr><td class="kw">产品摄影</td><td>一次性</td><td>¥2,000-5,000</td><td>白底图+场景图</td></tr>
+      <tr><td class="kw">微信公众号认证</td><td>年费</td><td>¥300/年</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert">
+    <strong>最低启动预算（不含B2B年费）：</strong>约 ¥7,000-20,000（域名+视频+摄影+Google Ads首月）<br>
+    <strong>推荐预算（含核心B2B）：</strong>约 ¥55,000-70,000 首年（含Alibaba+1688+Google Ads半年+视频摄影）<br>
+    <strong>全额覆盖预算：</strong>约 ¥80,000-110,000 首年（所有平台+Google Ads+百度推广全年）
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>恒度科技 A2铝塑板全平台推广执行手册 | 生成日期：2026-07-01</p>
+  <p style="margin-top:8px;">网站：<a href="https://tenggua2.github.io/hendo-tech/">tenggua2.github.io/hendo-tech</a> | 联系人：滕乐溪 (Lex Teng) | 邮箱：tenggua2@163.com</p>
+</div>
+
+</div>
+</body>
+</html>
